@@ -26,7 +26,7 @@ body {
 
 header {
     margin-bottom: 30px;
-    background-color: #212121; /* ヘッダーの背景色 */
+    background-color: #213955; /* ヘッダーの背景色 */
     color: #FFFFFF;
     padding: 20px 0;
     /* border-radius: 8px 8px 0 0; */
@@ -55,7 +55,7 @@ h2 {
     margin: 20px 0 15px 0;
     padding: 5px 0;
     border-bottom: 2px solid #ddd;
-    color: #214555;
+    color: #213955;
     text-align: left; /* 各セクションの見出しは左揃え */
 }
 
