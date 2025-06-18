@@ -20,7 +20,7 @@ body {
     background-color: #ffffff;
     padding: 30px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    /* border-radius: 10px; */ /* ここを削除または0にする */
     text-align: center; /* 全体を中央揃え */
 }
 
@@ -29,7 +29,7 @@ header {
     background-color: #214555; /* ヘッダーの背景色 */
     color: #FFFFFF;
     padding: 20px 0;
-    border-radius: 8px 8px 0 0; /* 角を丸める */
+    /* border-radius: 8px 8px 0 0; */ /* ここを削除または0にする */
     margin: -30px -20px 30px -20px; /* コンテナのパディングを相殺し、端まで伸ばす */
 }
 
@@ -74,21 +74,23 @@ li {
 
 a {
     display: block; /* リンクをブロック要素にして、全体をクリック可能に */
-    background-color: #4CAF50; /* ボタンのような背景色 */
-    color: white;
+    background-color: #ffffff; /* 緑色から白色に変更 */
+    color: #333; /* 文字色を濃いグレーに変更（白背景で見えるように） */
     padding: 15px 20px;
     text-decoration: none;
-    border-radius: 8px; /* 角を丸める */
+    /* border-radius: 8px; */ /* 角の丸みを削除 */
+    border: 1px solid #ddd; /* 白ボタンなので、境界線を追加して区別しやすくする */
     font-size: 18px;
     font-weight: bold;
-    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* transitionにborder-colorも追加するとより滑らかに */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ボックスシャドウは少し弱めに調整 */
 }
 
 a:hover {
-    background-color: #45a049; /* ホバー時の色 */
+    background-color: #f5f5f5; /* ホバー時の色を薄いグレーに変更 */
     transform: translateY(-2px); /* 少し上に浮き上がるアニメーション */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* ホバー時のシャドウも調整 */
+    border-color: #bbb; /* ホバー時の境界線の色を濃くする */
 }
 
 footer {
