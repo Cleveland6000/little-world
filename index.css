@@ -20,8 +20,8 @@ body {
     background-color: #ffffff;
     padding: 30px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* border-radius: 10px; */ /* ここを削除または0にする */
-    text-align: center; /* 全体を中央揃え */
+    /* border-radius: 10px; */
+    text-align: left; /* ★ここを center から left に変更しました */
 }
 
 header {
@@ -29,8 +29,9 @@ header {
     background-color: #214555; /* ヘッダーの背景色 */
     color: #FFFFFF;
     padding: 20px 0;
-    /* border-radius: 8px 8px 0 0; */ /* ここを削除または0にする */
+    /* border-radius: 8px 8px 0 0; */
     margin: -30px -20px 30px -20px; /* コンテナのパディングを相殺し、端まで伸ばす */
+    text-align: center; /* ★ヘッダーのタイトルと説明は中央寄せを維持します */
 }
 
 h1 {
@@ -55,12 +56,25 @@ h2 {
     padding: 5px 0;
     border-bottom: 2px solid #ddd;
     color: #214555;
-    text-align: center; /* 見出しも中央揃え */
+    text-align: left; /* ★ここを center から left に変更しました */
 }
 
 .link-section {
     margin-bottom: 30px;
 }
+
+/* 「私について」セクション内のテキストを左揃えにするための追加スタイルは不要になりました */
+/* #container の text-align: left; で全体に適用されるため、これらの個別指定は削除します */
+/*
+.link-section:first-of-type h2 + p,
+.link-section:first-of-type .about-info {
+    text-align: left;
+}
+.link-section p,
+.link-section .about-info {
+    text-align: left;
+}
+*/
 
 ul {
     list-style: none; /* リストのマークを削除 */
@@ -78,18 +92,19 @@ a {
     color: #333; /* 文字色を濃いグレーに変更（白背景で見えるように） */
     padding: 15px 20px;
     text-decoration: none;
-    /* border-radius: 8px; */ /* 角の丸みを削除 */
+    /* border-radius: 8px; */
     border: 1px solid #ddd; /* 白ボタンなので、境界線を追加して区別しやすくする */
     font-size: 18px;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* transitionにborder-colorも追加するとより滑らかに */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ボックスシャドウは少し弱めに調整 */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* ★ボタンのテキストは中央寄せを維持 */
 }
 
 a:hover {
     background-color: #f5f5f5; /* ホバー時の色を薄いグレーに変更 */
     transform: translateY(-2px); /* 少し上に浮き上がるアニメーション */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* ホバー時のシャドウも調整 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     border-color: #bbb; /* ホバー時の境界線の色を濃くする */
 }
 
@@ -97,8 +112,36 @@ footer {
     margin-top: 40px;
     font-size: 14px;
     color: #888;
-    text-align: center;
+    text-align: left; /* ★ここを center から left に変更しました */
 }
+
+/* about-info に関するスタイルは、#container の text-align: left; で適用されるため、
+   text-align: left; の記述は冗長になりますが、残しておいても問題ありません。
+   もし他の場所で中央寄せに戻す必要がある場合のために残しておくと良いでしょう。 */
+.about-info {
+    margin: 20px 0; /* 上下に余白を追加 */
+    text-align: left; /* リスト項目も左寄せにする */
+    padding: 0 10px; /* 左右に少しパディングを入れる */
+    line-height: 1.8; /* 行の高さを少し広げて読みやすくする */
+    color: #555; /* 少し薄い色に */
+}
+
+.about-info ul {
+    list-style: none; /* デフォルトのリストマークを削除 */
+    padding: 0; /* デフォルトのパディングを削除 */
+    margin: 0; /* デフォルトのマージンを削除 */
+}
+
+.about-info li {
+    margin-bottom: 8px; /* リスト項目間の余白 */
+}
+
+.about-info strong {
+    color: #214555; /* ラベルの色を強調 */
+    display: inline-block;
+    min-width: 100px; /* ラベルの最小幅を設定して、テキストが揃うようにする（調整してください） */
+}
+
 
 /* スマートフォンでの調整 */
 @media screen and (max-width: 767px) {
