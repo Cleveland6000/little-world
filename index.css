@@ -138,7 +138,7 @@ footer {
 .about-info .info-label {
     display: block; /* ラベルをブロック要素にして強制的に改行 */
     font-weight: bold; /* 太字 */
-    color: #214555; /* ラベルの色 */
+    color: #213955; /* ラベルの色 */
     margin-bottom: 5px; /* ラベルと値の間に少し余白 */
     font-size: 1.1em; /* ラベルを少し大きくする（任意） */
 }
