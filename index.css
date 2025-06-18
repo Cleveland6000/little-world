@@ -21,7 +21,7 @@ body {
     padding: 30px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     /* border-radius: 10px; */
-    text-align: left; /* ★ここを center から left に変更しました */
+    text-align: left; /* コンテナ内のテキストはデフォルトで左揃え */
 }
 
 header {
@@ -31,7 +31,7 @@ header {
     padding: 20px 0;
     /* border-radius: 8px 8px 0 0; */
     margin: -30px -20px 30px -20px; /* コンテナのパディングを相殺し、端まで伸ばす */
-    text-align: center; /* ★ヘッダーのタイトルと説明は中央寄せを維持します */
+    text-align: center; /* ヘッダーのタイトルと説明は中央寄せを維持 */
 }
 
 h1 {
@@ -56,15 +56,14 @@ h2 {
     padding: 5px 0;
     border-bottom: 2px solid #ddd;
     color: #214555;
-    text-align: left; /* ★ここを center から left に変更しました */
+    text-align: left; /* 各セクションの見出しは左揃え */
 }
 
 .link-section {
     margin-bottom: 30px;
 }
 
-/* 「私について」セクション内のテキストを左揃えにするための追加スタイルは不要になりました */
-/* #container の text-align: left; で全体に適用されるため、これらの個別指定は削除します */
+/* ★以前の text-align: left; の個別指定は #container に統合されたため、削除 */
 /*
 .link-section:first-of-type h2 + p,
 .link-section:first-of-type .about-info {
@@ -88,21 +87,21 @@ li {
 
 a {
     display: block; /* リンクをブロック要素にして、全体をクリック可能に */
-    background-color: #ffffff; /* 緑色から白色に変更 */
-    color: #333; /* 文字色を濃いグレーに変更（白背景で見えるように） */
+    background-color: #ffffff; /* 白色ボタン */
+    color: #333; /* 文字色を濃いグレー */
     padding: 15px 20px;
     text-decoration: none;
     /* border-radius: 8px; */
-    border: 1px solid #ddd; /* 白ボタンなので、境界線を追加して区別しやすくする */
+    border: 1px solid #ddd; /* 境界線を追加 */
     font-size: 18px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center; /* ★ボタンのテキストは中央寄せを維持 */
+    text-align: center; /* ボタンのテキストは中央寄せを維持 */
 }
 
 a:hover {
-    background-color: #f5f5f5; /* ホバー時の色を薄いグレーに変更 */
+    background-color: #f5f5f5; /* ホバー時の色を薄いグレー */
     transform: translateY(-2px); /* 少し上に浮き上がるアニメーション */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     border-color: #bbb; /* ホバー時の境界線の色を濃くする */
@@ -112,41 +111,59 @@ footer {
     margin-top: 40px;
     font-size: 14px;
     color: #888;
-    text-align: left; /* ★ここを center から left に変更しました */
+    text-align: left; /* フッターも左揃え */
 }
 
-/* about-info に関するスタイルは、#container の text-align: left; で適用されるため、
-   text-align: left; の記述は冗長になりますが、残しておいても問題ありません。
-   もし他の場所で中央寄せに戻す必要がある場合のために残しておくと良いでしょう。 */
+/* ★「私について」セクション内のスタイルを更新 */
 .about-info {
     margin: 20px 0; /* 上下に余白を追加 */
-    text-align: left; /* リスト項目も左寄せにする */
+    text-align: left; /* リスト項目も左寄せにする（親要素でleftになっているので冗長だが明示的に） */
     padding: 0 10px; /* 左右に少しパディングを入れる */
-    line-height: 1.8; /* 行の高さを少し広げて読みやすくする */
-    color: #555; /* 少し薄い色に */
+    line-height: 1.6; /* 行の高さを調整 */
+    color: #555;
 }
 
 .about-info ul {
-    list-style: none; /* デフォルトのリストマークを削除 */
-    padding: 0; /* デフォルトのパディングを削除 */
-    margin: 0; /* デフォルトのマージンを削除 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .about-info li {
-    margin-bottom: 8px; /* リスト項目間の余白 */
+    margin-bottom: 15px; /* 各情報セット間の余白を調整 */
+    /* line-height: 1.4; */ /* こちらは削除またはコメントアウト。info-label/valueで調整 */
 }
 
+/* ★新しい .info-label スタイル */
+.about-info .info-label {
+    display: block; /* ラベルをブロック要素にして強制的に改行 */
+    font-weight: bold; /* 太字 */
+    color: #214555; /* ラベルの色 */
+    margin-bottom: 5px; /* ラベルと値の間に少し余白 */
+    font-size: 1.1em; /* ラベルを少し大きくする（任意） */
+}
+
+/* ★新しい .info-value スタイル */
+.about-info .info-value {
+    display: block; /* 値もブロック要素 */
+    padding-left: 20px; /* 値を右にインデント（調整してください） */
+    color: #333; /* 値のテキスト色 */
+    line-height: 1.4; /* 値の行の高さ */
+}
+
+/* ★以前の .about-info strong スタイルは不要なので削除またはコメントアウト */
+/*
 .about-info strong {
-    color: #214555; /* ラベルの色を強調 */
+    color: #214555;
     display: inline-block;
-    min-width: 100px; /* ラベルの最小幅を設定して、テキストが揃うようにする（調整してください） */
+    min-width: 100px;
 }
-
+*/
 
 /* スマートフォンでの調整 */
 @media screen and (max-width: 767px) {
     body {
-        padding: 15px; /* 全体のパディングを少し小さく */
+        padding: 15px;
     }
 
     #container {
@@ -154,7 +171,7 @@ footer {
     }
 
     header {
-        margin: -20px -15px 20px -15px; /* ヘッダーの調整 */
+        margin: -20px -15px 20px -15px;
     }
 
     h1 {
@@ -168,5 +185,10 @@ footer {
     a {
         padding: 12px 15px;
         font-size: 16px;
+    }
+
+    /* ★スマートフォンでの info-value のインデント調整 */
+    .about-info .info-value {
+        padding-left: 15px; /* スマホではインデントを少し小さくするなどの調整 */
     }
 }
