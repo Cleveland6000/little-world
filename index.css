@@ -1,168 +1,127 @@
 @charset "UTF-8";
+
 body {
-	margin: 0;
-	padding: 0;
-	font-family: "游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-	line-height: 1.6;
-    font-size: 16px;
-}
-#header-container {
-  margin: 0 auto;
-  width: 694px;
-}
-header {
-	background-color: #214555;
-}
-#head-inner {
-    padding: 25px 0;
-}
-h1 {
-	font-size: 26px;
-	font-weight: bold;
-	padding: 10px 0 0 0;
-	margin: 0;
-	color: #FFFFFF;
-}
-h1 a {
-	font-weight: bold;
-	color: #FFFFFF;
-	text-decoration: none;
-}
-h1 a:hover {
-	color: #e8f3f9;
-	text-decoration: none;
-}
-.description {
-	line-height: 1.2;
-	color: #FFFFFF;
-	margin: 0.5em 0 1em 0;
-}
-h2 {
-	font-size: 22px;
-	margin: 0;
-	padding: 4px 0;
-	border-bottom: 1px solid #999;
-}
-#content-wrapper {margin: 0 auto;
-    width: 694px;}
-main {
-	color: #333;
-}
-#inner {
-	padding: 20px 0 0 0;
-}
-ul {
-	margin: 0 0 0 1em;
-	padding: 0;
-}
-li {
-	list-style: disc;
-}
-p {
-	margin: 1em 0;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border: 0;
-}
-hr {
-	border-width: 1px 0 0 0;
-	border-style: solid;
-	border-color: #ccc;
-	height: 1px;
-}
-a {
-	font-weight: normal;
-}
-aside {
-
-}
-#middle-inner {
-	padding: 20px 0 20px 0;
-}
-.side-title {
-	padding: 7px 16px 7px 16px;
-	background-color: #f1f1f1;
-	color: #333;
-	font-weight: bold;
-	border: 1px solid #ccc;
-	margin-bottom: 10px;
-	border-radius: 5px;
-}
-.side {
-	margin: 0 0 10px 0;
-	padding: 2px 8px 8px 7px;
-	background-color: #fcfcfc;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	border-radius: 5px;
-}
-.side ul {
-	margin: 0 0 0 10px;
-	padding: 0;
-}
-.side li {
-	list-style: none;
-	margin-bottom: 0.5em;
-}
-.side li a {
-	text-decoration: none;
-	color: #214555;
-}
-.side li a:hover {
-	text-decoration: underline;
-}
-footer {
-	font-size: 15px;
-	height: 100px;
-	clear: both;
-	text-align: center;
-}
-blockquote {
-	border: 1px solid #ccc;
-	padding: 5px;
-	margin: 10px;
-}
-@media screen and (max-width: 767px) {
-#header-container {
     margin: 0;
-	width: 100%;
+    padding: 20px; /* 全体に余白 */
+    font-family: "游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: #f0f2f5; /* 背景色 */
+    color: #333;
+    display: flex; /* コンテンツを中央に寄せるため */
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: flex-start; /* 垂直方向の上寄せ */
+    min-height: 100vh; /* 画面全体を高さとする */
 }
-header {
 
+#container {
+    max-width: 600px; /* Linktreeのような中心に寄ったデザイン */
+    width: 100%;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center; /* 全体を中央揃え */
 }
-#head-inner {
-    padding: 25px 10px;
-	background-color: #214555;
+
+header {
+    margin-bottom: 30px;
+    background-color: #214555; /* ヘッダーの背景色 */
+    color: #FFFFFF;
+    padding: 20px 0;
+    border-radius: 8px 8px 0 0; /* 角を丸める */
+    margin: -30px -20px 30px -20px; /* コンテナのパディングを相殺し、端まで伸ばす */
 }
-.description {
-}
-#content-wrapper {
-margin: 0;
-	width: 100%;}
-main {
-width: 100%;
-	color: #333;
-}
-#inner {
-	padding: 20px 10px 0 10px;
-}
-aside {
-width: 100%;
-}
-#middle-inner {
-	padding: 10px 10px 20px 10px;
-}
+
 h1 {
-	font-size: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
 }
+
+.description {
+    line-height: 1.4;
+    color: #e0e0e0;
+    margin: 10px 0 0 0;
+    font-size: 15px;
+}
+
+/* 活動名義一覧とアカウントとかの見出しスタイルを統一 */
 h2 {
-	font-size: 18px;
+    font-size: 22px;
+    margin: 20px 0 15px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #ddd;
+    color: #214555;
+    text-align: center; /* 見出しも中央揃え */
 }
-h3 {
-	font-size: 16px;
+
+.link-section {
+    margin-bottom: 30px;
 }
-h4 {
-	font-size: 14px;
+
+ul {
+    list-style: none; /* リストのマークを削除 */
+    margin: 0;
+    padding: 0;
 }
+
+li {
+    margin-bottom: 15px;
+}
+
+a {
+    display: block; /* リンクをブロック要素にして、全体をクリック可能に */
+    background-color: #4CAF50; /* ボタンのような背景色 */
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 8px; /* 角を丸める */
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+a:hover {
+    background-color: #45a049; /* ホバー時の色 */
+    transform: translateY(-2px); /* 少し上に浮き上がるアニメーション */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+}
+
+/* スマートフォンでの調整 */
+@media screen and (max-width: 767px) {
+    body {
+        padding: 15px; /* 全体のパディングを少し小さく */
+    }
+
+    #container {
+        padding: 20px 15px;
+    }
+
+    header {
+        margin: -20px -15px 20px -15px; /* ヘッダーの調整 */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    a {
+        padding: 12px 15px;
+        font-size: 16px;
+    }
 }
