@@ -14,6 +14,17 @@ body {
     min-height: 100vh; /* 画面全体を高さとする */
 }
 
+.about-info .info-value ul li a {
+    display: block; /* リンクをブロック要素にする */
+    margin-bottom: 10px; /* ここでリンクの下に間隔を設定 */
+    /* 元の a 要素の padding, border, box-shadow などはそのまま適用されます */
+}
+
+/* 'Pages:' リストの最後のリンクの下マージンは不要なのでリセット */
+.about-info .info-value ul li:last-child a {
+    margin-bottom: 0;
+}
+
 #container {
     max-width: 600px; /* Linktreeのような中心に寄ったデザイン */
     width: 100%;
