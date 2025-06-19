@@ -96,7 +96,7 @@ li {
 .about-info .info-value ul li {
     margin: 0;          /* li のデフォルトマージンをリセット */
     padding: 0;         /* li のデフォルトパディングをリセット */
-    line-height: 1.2;   /* 行の高さを調整して、行間を狭める */
+    line-height: 1.4;   /* 行の高さを調整して、行間を狭める */
     display: block;     /* 各リスト項目を新しい行から表示させる */
     /* もし margin-right が残っていたら削除してください */
     /* margin-right: 0; */
