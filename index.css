@@ -84,7 +84,17 @@ ul {
 li {
     margin-bottom: 15px;
 }
-
+.about-info .info-value ul li {
+    display: inline;    /* 各リスト項目をインライン要素として横並びにする */
+    margin-right: 5px;  /* 各項目の右に5pxの間隔を設定 */
+    white-space: nowrap; /* テキストの途中で改行されないようにする */
+}
+.about-info .info-value ul li {
+    display: inline;    /* 各リスト項目を横並びに */
+    margin-bottom: 0;   /* ここで元の li の 15px を 0 に上書き */
+    margin-right: 5px;  /* 各項目間の横方向の間隔 */
+    white-space: nowrap; /* テキストの途中で改行されないように */
+}
 a {
     display: block; /* リンクをブロック要素にして、全体をクリック可能に */
     background-color: #ffffff; /* 白色ボタン */
