@@ -84,11 +84,21 @@ ul {
 li {
     margin-bottom: 15px;
 }
+/* 親の about-info 内にある .info-value の中の ul にのみ適用 */
+.about-info .info-value ul {
+    list-style: none; /* リストマーカーを非表示 */
+    margin: 0;        /* ul のデフォルトマージンをリセット */
+    padding: 0;       /* ul のデフォルトパディングをリセット */
+}
+
+/* その ul の中の li にのみ適用 */
 .about-info .info-value ul li {
-    display: inline;    /* 各リスト項目を横並びに */
-    margin-bottom: 0;   /* ここで元の li の 15px を 0 に上書き */
-    margin-right: 5px;  /* 各項目間の横方向の間隔 */
-    white-space: nowrap; /* テキストの途中で改行されないように */
+    margin: 0;          /* li のデフォルトマージンをリセット */
+    padding: 0;         /* li のデフォルトパディングをリセット */
+    line-height: 1.2;   /* 行の高さを調整して、行間を狭める */
+                        /* 1.0 に近づけるほど行間が詰まりますが、
+                           読みにくくならないよう調整してください */
+    display: block;     /* li はデフォルトでブロック要素ですが、念のため明示 */
 }
 a {
     display: block; /* リンクをブロック要素にして、全体をクリック可能に */
