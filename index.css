@@ -24,7 +24,48 @@ body {
 .about-info .info-value ul li:last-child a {
     margin-bottom: 0;
 }
+.site-map ul {
+    list-style: none; /* デフォルトの箇条書きマークを消す */
+    padding-left: 20px; /* インデントを設定 */
+    position: relative;
+}
 
+.site-map ul ul {
+    padding-left: 20px; /* ネストされたリストのインデント */
+}
+
+.site-map li {
+    margin: 5px 0;
+    position: relative;
+}
+
+/* ツリーの線を表現 */
+.site-map ul li::before {
+    content: "├─"; /* 縦線と横線の表現 */
+    position: absolute;
+    left: -20px;
+    top: 0;
+    color: #333; /* 線の色 */
+}
+
+.site-map ul li:last-child::before {
+    content: "└─"; /* 最後の要素の線 */
+}
+
+/* 親ULの最初のLIには線不要 */
+.site-map > ul > li:first-child::before {
+    content: none;
+}
+
+/* ネストされたULの縦線 */
+.site-map ul ul::before {
+    content: "";
+    position: absolute;
+    left: 0px; /* 線の開始位置を調整 */
+    top: 0;
+    bottom: 10px; /* 線の長さを調整 */
+    border-left: 1px solid #ccc; /* 縦線 */
+}
 #container {
     max-width: 600px; /* Linktreeのような中心に寄ったデザイン */
     width: 100%;
