@@ -247,77 +247,30 @@ img {
 .site-structure-map ul {
     list-style: none; /* デフォルトの箇条書きマークを消す */
     margin: 0;
-    padding: 0;
+    padding: 0; /* デフォルトの左パディングをリセット */
 }
 
 /* 各リストアイテム（<li>）の基本スタイル */
 .site-structure-map li {
-    position: relative;
-    margin-left: 20px; /* インデントの基本値 */
-    padding-left: 20px; /* テキストと線の間のスペース */
-    white-space: nowrap; /* テキストの折り返しを防ぐ (必要なら) */
+    margin: 0; /* デフォルトのマージンをリセット */
+    /* インデントは親のULで制御するため、ここにはpadding-leftを直接指定しない */
 }
 
-/* 最上位の項目（Top Page）のスタイル */
+/* ネストされた各UL（サブ項目のリスト）のインデント */
+.site-structure-map li ul {
+    padding-left: 20px; /* ここで子リスト全体に左パディングを与えてインデント */
+}
+
+/* 現在地の項目（オプション：太字や色付け） */
 .site-structure-map .current-page-item {
-    margin-left: 0;
-    padding-left: 0;
     font-weight: bold; /* 現在地を太字にする例 */
-    color: #007bff; /* 現在地の色を変える例 */
+    color: #007bff;   /* 現在地の色を変える例 */
 }
 
-/* 最上位の項目直下の<ul>（サブ項目リスト）のスタイル */
-.site-structure-map .current-page-item > ul {
-    position: relative;
-    padding-left: 0; /* リセット */
-    margin-top: 5px; /* 親項目との間隔 */
+/* トップレベルの項目にはインデントを適用しない */
+.site-structure-map > ul > li {
+    padding-left: 0; /* ルートの<li>にはパディングを適用しない */
 }
-
-/* 最上位の項目から下の階層へ伸びる縦線 */
-.site-structure-map .current-page-item > ul::before {
-    content: '';
-    position: absolute;
-    left: 10px; /* 親項目の右端から縦線が始まる位置 */
-    top: -5px; /* 親項目の行の少し上から線を伸ばす */
-    bottom: 5px; /* 最後のサブ項目の下まで線を伸ばす */
-    width: 1px;
-    background-color: #ccc; /* 線の色 */
-    z-index: 1;
-}
-
-/* 各サブ項目の縦線と横線 */
-.site-structure-map li:not(.current-page-item)::before {
-    content: ''; /* 上からの縦線 */
-    position: absolute;
-    left: -10px; /* 親の縦線と接続するX位置 */
-    top: 0;
-    height: 100%; /* LIの高さ全体に縦線を伸ばす */
-    width: 1px;
-    background-color: #ccc;
-    z-index: 1;
-}
-
-.site-structure-map li:not(.current-page-item)::after {
-    content: '├─'; /* 横線と角の記号 */
-    position: absolute;
-    left: -20px; /* 記号の開始位置 */
-    top: 0;
-    color: #555;
-    background-color: white; /* 記号が縦線を隠さないように背景色を白に */
-    padding-right: 5px; /* 記号とテキストの間隔 */
-    z-index: 2;
-}
-
-/* 最後のサブ項目の線の調整 */
-.site-structure-map li:last-child::before {
-    /* 最後の項目に到達する縦線は、項目名の高さの半分までにする */
-    height: calc(1.5em / 2); /* line-heightに基づいて調整 */
-}
-
-.site-structure-map li:last-child::after {
-    content: '└─'; /* 最後の項目の記号を「└─」にする */
-}
-
 /* スマートフォンでの調整 */
 @media screen and (max-width: 767px) {
     body {
