@@ -113,18 +113,18 @@ li {
     /* margin-right: 0; */
 }
 a {
-    display: block; /* リンクをブロック要素にして、全体をクリック可能に */
-    background-color: #ffffff; /* 白色ボタン */
-    color: #333; /* 文字色を濃いグレー */
+    display: block;
+    background-color: #ffffff;
+    color: #333;
     padding: 15px 20px;
     text-decoration: none;
-    /* border-radius: 8px; */
-    border: 1px solid #ddd; /* 境界線を追加 */
+    border: 1px solid #ddd;
     font-size: 18px;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    /* ★ここを削除またはコメントアウトします★ */
+    /* transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center; /* ボタンのテキストは中央寄せを維持 */
+    text-align: center;
 }
 
 a:hover {
