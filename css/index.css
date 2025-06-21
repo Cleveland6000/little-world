@@ -202,7 +202,7 @@ footer {
 }
 /* css/index.css に追加 */
 img {
-    max-width: 100%; /* 親要素の幅を超えないようにする */
+    max-width: 70%; /* 親要素の幅を超えないようにする */
     height: auto;    /* 縦横比を維持 */
     display: block;  /* 中央寄せなどにしやすくするため */
     margin: 20px auto; /* 上下に余白、左右中央寄せ */
