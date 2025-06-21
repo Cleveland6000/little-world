@@ -268,7 +268,7 @@ img {
 /* 現在地の項目（オプション：太字や色付け） */
 .site-structure-map .current-page-item {
     font-weight: bold; /* 現在地を太字にする例 */
-    color: #007bff;   /* 現在地の色を変える例 */
+    color: #225c99;   /* 現在地の色を変える例 */
 }
 
 /* トップレベルの項目にはインデントを適用しない */
