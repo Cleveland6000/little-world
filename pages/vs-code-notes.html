@@ -46,7 +46,7 @@
                             <span class="info-label">Notes:</span>
                             <ul class="info-value">
                                 <li>
-                                    <a href="#">みじっそう</a>
+                                    <a href="folder-structure-generator.html">asfasadgn</a>
                                 </li>
                             </ul>
                         </li>
@@ -56,53 +56,6 @@
             <p>
                 <a href="./../index.html">Return to Top Page</a>
             </p>
-
-            <pre><code>@echo off
-setlocal
-
-:INPUT_PATH
-set "TARGET_DIR="
-set /p "TARGET_DIR=Enter the path to output the folder structure (e.g., C:\Users\YourUser\Documents): "
-
-if not exist "%TARGET_DIR%" (
-    echo.
-    echo Error: The specified path does not exist.
-    echo.
-    goto :INPUT_PATH
-)
-
-echo.
-echo Specified path: "%TARGET_DIR%"
-echo Generating folder structure...
-
-tree "%TARGET_DIR%" /F > "%~dp0folder_structure.txt"
-
-echo.
-echo Folder structure has been output to %~dp0folder_structure.txt.
-echo.
-pause
-
-endlocal</code></pre>
-
-            <p>
-                このバッチスクリプトの機能<br>
-                このスクリプトは、指定されたWindowsフォルダの階層構造(ファイルとサブフォルダの一覧)を自動で読み取り、その結果をテキストファイルとして保存するツールです。<br>
-                実行すると、ユーザーにフォルダパスの入力を求め、そのパスが存在すれば、スクリプトが置いてあるのと同じ場所にfolder_structure.txtというファイルを作成し、フォルダ構成を書き込みます。
-            </p>
-            <h2>使い方</h2>
-            <ol>
-                <li>上記のコードをすべてコピーします。</li>
-                <li>Windowsの「メモ帳」など、テキストエディタを開きます。</li>
-                <li>コピーしたコードをメモ帳に貼り付けます。**必ず、<code>@echo off</code>の前に余計な文字やスペースが入っていないことを確認してください。**</li>
-                <li>ファイルを**「<code>.bat</code>」の拡張子**で保存します（例:
-                    <code>generate_folder_structure.bat</code>）。保存する際、ファイルの種類を「すべてのファイル」にし、エンコーディングを**「ANSI」**または**「Shift-JIS」**に設定することを推奨します。
-                </li>
-                <li>保存した<code>.bat</code>ファイルをダブルクリックして実行します。</li>
-                <li>コマンドプロンプトの画面が表示され、「<code>Enter the path to output the folder structure (e.g., C:\Users\YourUser\Documents):</code>」と表示されたら、調べたいフォルダのパス（例:
-                    <code>C:\MyProject</code>）を入力し、Enterキーを押します。</li>
-                <li>処理が完了すると、スクリプトと同じフォルダ内に「<code>folder_structure.txt</code>」というテキストファイルが作成されています。このファイルを開くと、指定したフォルダの構成が確認できます。
-                </li>
-            </ol>
         </main>
     </div>
 </body>
