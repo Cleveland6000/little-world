@@ -196,7 +196,7 @@ footer {
     padding: 0;
     margin: 0;
 }
-/* index.css に追加 */
+/* css/index.css に追加 */
 img {
     max-width: 100%; /* 親要素の幅を超えないようにする */
     height: auto;    /* 縦横比を維持 */
