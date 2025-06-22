@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MinGWのインストール手順</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="icon" href="../images/icon.png" type="image/png">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>MinGWのインストール手順</h1>
+        </header>
+        <main>
+            <section class="link-section">
+                <h2>手順</h2>
+                <ol>
+                    <li>
+                        <h3>MSYS2のダウンロード:</h3>
+                        <p>MSYS2の公式ウェブサイトにアクセスし、インストーラーをダウンロードします。<br>
+                            https://www.msys2.org/<br>
+                            ページ中央にある「Download installer」ボタンをクリックして、最新のインストーラー（例: msys2-x86_64-*.exe）をダウンロードします。
+                        </p>
+                    </li>
+                    <li>
+                        <h3>MSYS2のインストール:</h3>
+                        <p>ダウンロードしたインストーラーを実行し、指示に従ってインストールを進めます。</p>
+                        <ul>
+                            <li>インストールパスは、特に理由がなければデフォルトの **C:\msys64** のままで問題ありません。</li>
+                            <li>インストールが完了したら、「Run MSYS2 now」にチェックが入っていることを確認して「Finish」をクリックします。</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>MSYS2環境の初期設定とアップデート:</h3>
+                        <p>MSYS2のターミナルが起動したら、以下のコマンドを順番に実行して、パッケージデータベースを更新し、システムを最新の状態にします。<br>
+                            まず、パッケージデータベースの更新：<br>
+                        <pre><code>pacman -Syu</code></pre><br>
+                        このコマンドを実行すると、MSYS2のパッケージデータベースが更新されます。<br>
+                        更新が完了したら、ターミナルを再起動します。
+                        次に、残りのパッケージを更新：<br>
+                        <pre><code>pacman -Su</code></pre><br>
+                        これも完了するまで待ちます。
+                        </p>
+
+                    </li>
+                </ol>
+            </section>
+        </main>
+        <footer>
+            <p><a href="./../index.html">トップページに戻る</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>
