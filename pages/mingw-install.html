@@ -7,6 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="icon" href="../images/icon.png" type="image/png">
+    <style>
+        /* コードスニペットのスタイル（任意） */
+        pre {
+            background-color: #f4f4f4;
+            /* 背景色 */
+            border: 1px solid #ddd;
+            /* 枠線 */
+            padding: 10px;
+            /* 内側の余白 */
+            border-radius: 5px;
+            /* 角の丸み */
+            overflow-x: auto;
+            /* 横スクロールが必要な場合 */
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            /* 等幅フォント */
+            color: #333;
+            /* 文字色 */
+        }
+    </style>
 </head>
 
 <body>
@@ -37,12 +59,12 @@
                         <h3>MSYS2環境の初期設定とアップデート:</h3>
                         <p>MSYS2のターミナルが起動したら、以下のコマンドを順番に実行して、パッケージデータベースを更新し、システムを最新の状態にします。<br>
                             まず、パッケージデータベースの更新：<br>
-                        <pre><code>pacman -Syu</code></pre><br>
-                        このコマンドを実行すると、MSYS2のパッケージデータベースが更新されます。<br>
-                        更新が完了したら、ターミナルを再起動します。
-                        次に、残りのパッケージを更新：<br>
-                        <pre><code>pacman -Su</code></pre><br>
-                        これも完了するまで待ちます。
+                            <code>pacman -Syu</code><br>
+                            このコマンドを実行すると、MSYS2のパッケージデータベースが更新されます。<br>
+                            更新が完了したら、ターミナルを再起動します。
+                            次に、残りのパッケージを更新：<br>
+                            <code>pacman -Su</code><br>
+                            これも完了するまで待ちます。
                         </p>
 
                     </li>
