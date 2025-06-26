@@ -153,7 +153,7 @@ li {
     /* もし margin-right が残っていたら削除してください */
     /* margin-right: 0; */
 }
-a {
+.button a {
     display: block; /* ← これは維持 */
     background-color: #ffffff;
     color: #333;
@@ -172,7 +172,7 @@ a {
     /* ★ここまで追加・修正★ */
 }
 
-a:hover {
+.button a:hover {
     background-color: #f5f5f5;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
