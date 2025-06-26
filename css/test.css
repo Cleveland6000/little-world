@@ -101,11 +101,8 @@ li {
     color: #555;
 }
 
-.info-value {
-    display: block;
-    line-height: 1.4;
-}
 .button {
+    line-height: 1.4;
     display: block;
     background-color: #ffffff;
     color: #333;
