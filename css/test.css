@@ -69,6 +69,10 @@ ul {
     list-style: none;
 }
 
+.section {
+    margin-bottom: 30px;
+}
+
 .button {
     display: block;
     background-color: #ffffff;
