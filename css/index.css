@@ -33,57 +33,6 @@ body {
     margin-bottom: 0;
 }
 
-.site-map ul {
-    list-style: none;
-    /* デフォルトの箇条書きマークを消す */
-    padding-left: 20px;
-    /* インデントを設定 */
-    position: relative;
-}
-
-.site-map ul ul {
-    padding-left: 20px;
-    /* ネストされたリストのインデント */
-}
-
-.site-map li {
-    margin: 5px 0;
-    position: relative;
-}
-
-/* ツリーの線を表現 */
-.site-map ul li::before {
-    content: "├─";
-    /* 縦線と横線の表現 */
-    position: absolute;
-    left: -20px;
-    top: 0;
-    color: #333;
-    /* 線の色 */
-}
-
-.site-map ul li:last-child::before {
-    content: "└─";
-    /* 最後の要素の線 */
-}
-
-/* 親ULの最初のLIには線不要 */
-.site-map>ul>li:first-child::before {
-    content: none;
-}
-
-/* ネストされたULの縦線 */
-.site-map ul ul::before {
-    content: "";
-    position: absolute;
-    left: 0px;
-    /* 線の開始位置を調整 */
-    top: 0;
-    bottom: 10px;
-    /* 線の長さを調整 */
-    border-left: 1px solid #ccc;
-    /* 縦線 */
-}
 
 #container {
     max-width: 600px;
@@ -140,17 +89,6 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* ★以前の text-align: left; の個別指定は #container に統合されたため、削除 */
-/*
-.link-section:first-of-type h2 + p,
-.link-section:first-of-type .about-info {
-    text-align: left;
-}
-.link-section p,
-.link-section .about-info {
-    text-align: left;
-}
-*/
 
 ul {
     list-style: none;
@@ -290,59 +228,7 @@ img {
     /* 値の行の高さ */
 }
 
-/* ★以前の .about-info strong スタイルは不要なので削除またはコメントアウト */
-/*
-.about-info strong {
-    color: #214555;
-    display: inline-block;
-    min-width: 100px;
-}
-*/
 
-/* サイト構造ツリーのコンテナ */
-.site-structure-map {
-    font-family: Arial, sans-serif;
-    /* お好みのフォントに */
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-}
-
-/* 全てのリスト（<ul>）の基本スタイル */
-.site-structure-map ul {
-    list-style: none;
-    /* デフォルトの箇条書きマークを消す */
-    margin: 0;
-    padding: 0;
-    /* デフォルトの左パディングをリセット */
-}
-
-/* 各リストアイテム（<li>）の基本スタイル */
-.site-structure-map li {
-    margin: 0;
-    /* デフォルトのマージンをリセット */
-    /* インデントは親のULで制御するため、ここにはpadding-leftを直接指定しない */
-}
-
-/* ネストされた各UL（サブ項目のリスト）のインデント */
-.site-structure-map li ul {
-    padding-left: 20px;
-    /* ここで子リスト全体に左パディングを与えてインデント */
-}
-
-/* 現在地の項目（オプション：太字や色付け） */
-.site-structure-map .current-page-item {
-    font-weight: bold;
-    /* 現在地を太字にする例 */
-    color: #225c99;
-    /* 現在地の色を変える例 */
-}
-
-/* トップレベルの項目にはインデントを適用しない */
-.site-structure-map>ul>li {
-    padding-left: 0;
-    /* ルートの<li>にはパディングを適用しない */
-}
 
 /* スマートフォンでの調整 */
 @media screen and (max-width: 767px) {
