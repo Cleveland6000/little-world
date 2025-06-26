@@ -20,18 +20,53 @@ body {
     /* 画面全体を高さとする */
 }
 
+.about-info {
+    margin: 20px 0;
+    text-align: left;
+    padding: 0 10px;
+    line-height: 1.6;
+    color: #555;
+}
+.about-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.about-info li {
+    margin-bottom: 15px;
+}
 .about-info .info-value ul li a {
     display: block;
-    /* リンクをブロック要素にする */
     margin-bottom: 10px;
-    /* ここでリンクの下に間隔を設定 */
-    /* 元の a 要素の padding, border, box-shadow などはそのまま適用されます */
 }
-
-/* 'Pages:' リストの最後のリンクの下マージンは不要なのでリセット */
 .about-info .info-value ul li:last-child a {
     margin-bottom: 0;
 }
+.about-info .info-value ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.about-info .info-value ul li {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    display: block;
+}
+.about-info .info-label {
+    display: block;
+    font-weight: bold;
+    color: #213955;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+.about-info .info-value {
+    display: block;
+    padding-left: 20px;
+    color: #333;
+    line-height: 1.4;
+}
+
 
 
 #container {
@@ -101,30 +136,6 @@ li {
     margin-bottom: 15px;
 }
 
-/* .about-info クラスを持つ要素内の .info-value 内の ul にのみ適用 */
-.about-info .info-value ul {
-    list-style: none;
-    /* リストマーカーを非表示 */
-    margin: 0;
-    /* ul のデフォルトマージンをリセット */
-    padding: 0;
-    /* ul のデフォルトパディングをリセット */
-    /* ここに display: inline; を含めない、または display: block; にする */
-}
-
-/* その ul の中の li にのみ適用 */
-.about-info .info-value ul li {
-    margin: 0;
-    /* li のデフォルトマージンをリセット */
-    padding: 0;
-    /* li のデフォルトパディングをリセット */
-    line-height: 1.4;
-    /* 行の高さを調整して、行間を狭める */
-    display: block;
-    /* 各リスト項目を新しい行から表示させる */
-    /* もし margin-right が残っていたら削除してください */
-    /* margin-right: 0; */
-}
 
 .button {
     display: block;
@@ -164,24 +175,6 @@ footer {
     /* フッターも左揃え */
 }
 
-/* ★「私について」セクション内のスタイルを更新 */
-.about-info {
-    margin: 20px 0;
-    /* 上下に余白を追加 */
-    text-align: left;
-    /* リスト項目も左寄せにする（親要素でleftになっているので冗長だが明示的に） */
-    padding: 0 10px;
-    /* 左右に少しパディングを入れる */
-    line-height: 1.6;
-    /* 行の高さを調整 */
-    color: #555;
-}
-
-.about-info ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
 
 /* css/index.css に追加 */
 img {
@@ -193,39 +186,6 @@ img {
     /* 中央寄せなどにしやすくするため */
     margin: 20px auto;
     /* 上下に余白、左右中央寄せ */
-}
-
-.about-info li {
-    margin-bottom: 15px;
-    /* 各情報セット間の余白を調整 */
-    /* line-height: 1.4; */
-    /* こちらは削除またはコメントアウト。info-label/valueで調整 */
-}
-
-/* ★新しい .info-label スタイル */
-.about-info .info-label {
-    display: block;
-    /* ラベルをブロック要素にして強制的に改行 */
-    font-weight: bold;
-    /* 太字 */
-    color: #213955;
-    /* ラベルの色 */
-    margin-bottom: 5px;
-    /* ラベルと値の間に少し余白 */
-    font-size: 1.1em;
-    /* ラベルを少し大きくする（任意） */
-}
-
-/* ★新しい .info-value スタイル */
-.about-info .info-value {
-    display: block;
-    /* 値もブロック要素 */
-    padding-left: 20px;
-    /* 値を右にインデント（調整してください） */
-    color: #333;
-    /* 値のテキスト色 */
-    line-height: 1.4;
-    /* 値の行の高さ */
 }
 
 
