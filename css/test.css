@@ -70,11 +70,18 @@ h3 {
     font-size: 1.1em;
 }
 
-.indent {
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 30px;
+}
+
+ul {
     list-style: none;
 }
 
-.section {
+.layout-block {
     margin-bottom: 30px;
 }
 
