@@ -20,3 +20,9 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
 }
+
+header {
+    background-color: #213955;
+    color: #FFFFFF;
+    text-align: center;
+}
