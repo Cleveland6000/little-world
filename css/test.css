@@ -28,7 +28,7 @@ header {
     background-color: #213955;
     color: #FFFFFF;
     padding: 20px 0;
-    margin: -30px 20px 30px 20px;
+    margin: -30px -20px 30px -20px;
     text-align: center;
 }
 
@@ -143,8 +143,7 @@ li {
     }
 
     header {
-        margin-top: -20px;
-        margin-bottom: 20px;
+        margin: -20px -15px 20px -15px;
     }
 
     h1 {
