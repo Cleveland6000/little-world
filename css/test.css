@@ -3,26 +3,34 @@
 body {
     margin: 0;
     padding: 20px;
+    /* 全体に余白 */
     font-family: "游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
     line-height: 1.6;
     font-size: 16px;
     background-color: #f0f2f5;
+    /* 背景色 */
     color: #333;
-    min-height: 100vh;
+    display: flex;
+    /* コンテンツを中央に寄せるため */
     justify-content: center;
+    /* 水平方向の中央揃え */
     align-items: flex-start;
+    /* 垂直方向の上寄せ */
     min-height: 100vh;
+    /* 画面全体を高さとする */
 }
 
 #container {
     max-width: 600px;
+    /* Linktreeのような中心に寄ったデザイン */
     width: 100%;
     background-color: #ffffff;
     padding: 30px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* border-radius: 10px; */
     text-align: left;
+    /* コンテナ内のテキストはデフォルトで左揃え */
 }
-
 
 
 header {
@@ -128,12 +136,6 @@ li {
     border-color: #bbb;
 }
 
-@media screen and (min-width: 768px) {
-    #container {
-        max-width: 960px;
-    }
-}
-
 @media screen and (max-width: 767px) {
     body {
         padding: 15px;
@@ -158,5 +160,11 @@ li {
     a {
         padding: 12px 15px;
         font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #container {
+        max-width: 960px;
     }
 }
