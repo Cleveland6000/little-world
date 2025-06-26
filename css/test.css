@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 20px;
+    /* 全体に余白 */
+    font-family: "游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: #f0f2f5;
+    /* 背景色 */
+    color: #333;
+    display: flex;
+    /* コンテンツを中央に寄せるため */
+    justify-content: center;
+    /* 水平方向の中央揃え */
+    align-items: flex-start;
+    /* 垂直方向の上寄せ */
+    min-height: 100vh;
+    /* 画面全体を高さとする */
+}
