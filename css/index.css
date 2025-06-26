@@ -20,6 +20,18 @@ body {
     /* 画面全体を高さとする */
 }
 
+#container {
+    max-width: 600px;
+    /* Linktreeのような中心に寄ったデザイン */
+    width: 100%;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* border-radius: 10px; */
+    text-align: left;
+    /* コンテナ内のテキストはデフォルトで左揃え */
+}
+
 .about-info {
     margin: 20px 0;
     text-align: left;
@@ -69,17 +81,6 @@ body {
 
 
 
-#container {
-    max-width: 600px;
-    /* Linktreeのような中心に寄ったデザイン */
-    width: 100%;
-    background-color: #ffffff;
-    padding: 30px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* border-radius: 10px; */
-    text-align: left;
-    /* コンテナ内のテキストはデフォルトで左揃え */
-}
 
 header {
     margin-bottom: 30px;
