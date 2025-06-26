@@ -6,9 +6,6 @@ body {
     font-size: 16px;
     background-color: #f0f2f5;
     color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     min-height: 100vh;
 }
 
@@ -19,6 +16,16 @@ body {
     padding: 30px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    background-color: #213955;
+    color: #FFFFFF;
+    padding: 20px 0;
+    margin: -30px -20px 30px -20px;
+    text-align: center;
 }
 
 h1 {
@@ -29,12 +36,13 @@ h1 {
     color: #FFFFFF;
 }
 
-header {
-    background-color: #213955;
-    color: #FFFFFF;
-    padding: 20px 0;
-    margin: -30px -20px 30px -20px;
-    text-align: center;
+h2 {
+    font-size: 22px;
+    margin: 20px 0 15px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #ddd;
+    color: #213955;
+    text-align: left;
 }
 
 .description {
