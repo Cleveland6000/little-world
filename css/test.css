@@ -63,6 +63,11 @@ h3 {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: block;
+    font-weight: bold;
+    color: #213955;
+    margin-bottom: 5px;
+    font-size: 1.1em;
 }
 
 ul {
