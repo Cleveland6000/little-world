@@ -2,21 +2,29 @@
 
 body {
     margin: 0;
-    padding: 20px; /* 全体に余白 */
+    padding: 20px;
+    /* 全体に余白 */
     font-family: "游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
     line-height: 1.6;
     font-size: 16px;
-    background-color: #f0f2f5; /* 背景色 */
+    background-color: #f0f2f5;
+    /* 背景色 */
     color: #333;
-    display: flex; /* コンテンツを中央に寄せるため */
-    justify-content: center; /* 水平方向の中央揃え */
-    align-items: flex-start; /* 垂直方向の上寄せ */
-    min-height: 100vh; /* 画面全体を高さとする */
+    display: flex;
+    /* コンテンツを中央に寄せるため */
+    justify-content: center;
+    /* 水平方向の中央揃え */
+    align-items: flex-start;
+    /* 垂直方向の上寄せ */
+    min-height: 100vh;
+    /* 画面全体を高さとする */
 }
 
 .about-info .info-value ul li a {
-    display: block; /* リンクをブロック要素にする */
-    margin-bottom: 10px; /* ここでリンクの下に間隔を設定 */
+    display: block;
+    /* リンクをブロック要素にする */
+    margin-bottom: 10px;
+    /* ここでリンクの下に間隔を設定 */
     /* 元の a 要素の padding, border, box-shadow などはそのまま適用されます */
 }
 
@@ -24,14 +32,18 @@ body {
 .about-info .info-value ul li:last-child a {
     margin-bottom: 0;
 }
+
 .site-map ul {
-    list-style: none; /* デフォルトの箇条書きマークを消す */
-    padding-left: 20px; /* インデントを設定 */
+    list-style: none;
+    /* デフォルトの箇条書きマークを消す */
+    padding-left: 20px;
+    /* インデントを設定 */
     position: relative;
 }
 
 .site-map ul ul {
-    padding-left: 20px; /* ネストされたリストのインデント */
+    padding-left: 20px;
+    /* ネストされたリストのインデント */
 }
 
 .site-map li {
@@ -41,19 +53,22 @@ body {
 
 /* ツリーの線を表現 */
 .site-map ul li::before {
-    content: "├─"; /* 縦線と横線の表現 */
+    content: "├─";
+    /* 縦線と横線の表現 */
     position: absolute;
     left: -20px;
     top: 0;
-    color: #333; /* 線の色 */
+    color: #333;
+    /* 線の色 */
 }
 
 .site-map ul li:last-child::before {
-    content: "└─"; /* 最後の要素の線 */
+    content: "└─";
+    /* 最後の要素の線 */
 }
 
 /* 親ULの最初のLIには線不要 */
-.site-map > ul > li:first-child::before {
+.site-map>ul>li:first-child::before {
     content: none;
 }
 
@@ -61,29 +76,38 @@ body {
 .site-map ul ul::before {
     content: "";
     position: absolute;
-    left: 0px; /* 線の開始位置を調整 */
+    left: 0px;
+    /* 線の開始位置を調整 */
     top: 0;
-    bottom: 10px; /* 線の長さを調整 */
-    border-left: 1px solid #ccc; /* 縦線 */
+    bottom: 10px;
+    /* 線の長さを調整 */
+    border-left: 1px solid #ccc;
+    /* 縦線 */
 }
+
 #container {
-    max-width: 600px; /* Linktreeのような中心に寄ったデザイン */
+    max-width: 600px;
+    /* Linktreeのような中心に寄ったデザイン */
     width: 100%;
     background-color: #ffffff;
     padding: 30px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     /* border-radius: 10px; */
-    text-align: left; /* コンテナ内のテキストはデフォルトで左揃え */
+    text-align: left;
+    /* コンテナ内のテキストはデフォルトで左揃え */
 }
 
 header {
     margin-bottom: 30px;
-    background-color: #213955; /* ヘッダーの背景色 */
+    background-color: #213955;
+    /* ヘッダーの背景色 */
     color: #FFFFFF;
     padding: 20px 0;
     /* border-radius: 8px 8px 0 0; */
-    margin: -30px -20px 30px -20px; /* コンテナのパディングを相殺し、端まで伸ばす */
-    text-align: center; /* ヘッダーのタイトルと説明は中央寄せを維持 */
+    margin: -30px -20px 30px -20px;
+    /* コンテナのパディングを相殺し、端まで伸ばす */
+    text-align: center;
+    /* ヘッダーのタイトルと説明は中央寄せを維持 */
 }
 
 h1 {
@@ -108,7 +132,8 @@ h2 {
     padding: 5px 0;
     border-bottom: 2px solid #ddd;
     color: #213955;
-    text-align: left; /* 各セクションの見出しは左揃え */
+    text-align: left;
+    /* 各セクションの見出しは左揃え */
 }
 
 .link-section {
@@ -128,7 +153,8 @@ h2 {
 */
 
 ul {
-    list-style: none; /* リストのマークを削除 */
+    list-style: none;
+    /* リストのマークを削除 */
     margin: 0;
     padding: 0;
 }
@@ -136,25 +162,35 @@ ul {
 li {
     margin-bottom: 15px;
 }
+
 /* .about-info クラスを持つ要素内の .info-value 内の ul にのみ適用 */
 .about-info .info-value ul {
-    list-style: none; /* リストマーカーを非表示 */
-    margin: 0;        /* ul のデフォルトマージンをリセット */
-    padding: 0;       /* ul のデフォルトパディングをリセット */
+    list-style: none;
+    /* リストマーカーを非表示 */
+    margin: 0;
+    /* ul のデフォルトマージンをリセット */
+    padding: 0;
+    /* ul のデフォルトパディングをリセット */
     /* ここに display: inline; を含めない、または display: block; にする */
 }
 
 /* その ul の中の li にのみ適用 */
 .about-info .info-value ul li {
-    margin: 0;          /* li のデフォルトマージンをリセット */
-    padding: 0;         /* li のデフォルトパディングをリセット */
-    line-height: 1.4;   /* 行の高さを調整して、行間を狭める */
-    display: block;     /* 各リスト項目を新しい行から表示させる */
+    margin: 0;
+    /* li のデフォルトマージンをリセット */
+    padding: 0;
+    /* li のデフォルトパディングをリセット */
+    line-height: 1.4;
+    /* 行の高さを調整して、行間を狭める */
+    display: block;
+    /* 各リスト項目を新しい行から表示させる */
     /* もし margin-right が残っていたら削除してください */
     /* margin-right: 0; */
 }
-.button a {
-    display: block; /* ← これは維持 */
+
+.button {
+    display: block;
+    /* ← これは維持 */
     background-color: #ffffff;
     color: #333;
     padding: 15px 20px;
@@ -166,13 +202,16 @@ li {
     text-align: center;
 
     /* ★ここから追加・修正★ */
-    max-width: 300px; /* 例えば最大幅を300pxに制限 */
-    margin-left: auto;  /* 中央寄せ */
-    margin-right: auto; /* 中央寄せ */
+    max-width: 300px;
+    /* 例えば最大幅を300pxに制限 */
+    margin-left: auto;
+    /* 中央寄せ */
+    margin-right: auto;
+    /* 中央寄せ */
     /* ★ここまで追加・修正★ */
 }
 
-.button a:hover {
+.button:hover {
     background-color: #f5f5f5;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -183,15 +222,20 @@ footer {
     margin-top: 40px;
     font-size: 14px;
     color: #888;
-    text-align: left; /* フッターも左揃え */
+    text-align: left;
+    /* フッターも左揃え */
 }
 
 /* ★「私について」セクション内のスタイルを更新 */
 .about-info {
-    margin: 20px 0; /* 上下に余白を追加 */
-    text-align: left; /* リスト項目も左寄せにする（親要素でleftになっているので冗長だが明示的に） */
-    padding: 0 10px; /* 左右に少しパディングを入れる */
-    line-height: 1.6; /* 行の高さを調整 */
+    margin: 20px 0;
+    /* 上下に余白を追加 */
+    text-align: left;
+    /* リスト項目も左寄せにする（親要素でleftになっているので冗長だが明示的に） */
+    padding: 0 10px;
+    /* 左右に少しパディングを入れる */
+    line-height: 1.6;
+    /* 行の高さを調整 */
     color: #555;
 }
 
@@ -200,34 +244,50 @@ footer {
     padding: 0;
     margin: 0;
 }
+
 /* css/index.css に追加 */
 img {
-    max-width: 70%; /* 親要素の幅を超えないようにする */
-    height: auto;    /* 縦横比を維持 */
-    display: block;  /* 中央寄せなどにしやすくするため */
-    margin: 20px auto; /* 上下に余白、左右中央寄せ */
+    max-width: 70%;
+    /* 親要素の幅を超えないようにする */
+    height: auto;
+    /* 縦横比を維持 */
+    display: block;
+    /* 中央寄せなどにしやすくするため */
+    margin: 20px auto;
+    /* 上下に余白、左右中央寄せ */
 }
 
 .about-info li {
-    margin-bottom: 15px; /* 各情報セット間の余白を調整 */
-    /* line-height: 1.4; */ /* こちらは削除またはコメントアウト。info-label/valueで調整 */
+    margin-bottom: 15px;
+    /* 各情報セット間の余白を調整 */
+    /* line-height: 1.4; */
+    /* こちらは削除またはコメントアウト。info-label/valueで調整 */
 }
 
 /* ★新しい .info-label スタイル */
 .about-info .info-label {
-    display: block; /* ラベルをブロック要素にして強制的に改行 */
-    font-weight: bold; /* 太字 */
-    color: #213955; /* ラベルの色 */
-    margin-bottom: 5px; /* ラベルと値の間に少し余白 */
-    font-size: 1.1em; /* ラベルを少し大きくする（任意） */
+    display: block;
+    /* ラベルをブロック要素にして強制的に改行 */
+    font-weight: bold;
+    /* 太字 */
+    color: #213955;
+    /* ラベルの色 */
+    margin-bottom: 5px;
+    /* ラベルと値の間に少し余白 */
+    font-size: 1.1em;
+    /* ラベルを少し大きくする（任意） */
 }
 
 /* ★新しい .info-value スタイル */
 .about-info .info-value {
-    display: block; /* 値もブロック要素 */
-    padding-left: 20px; /* 値を右にインデント（調整してください） */
-    color: #333; /* 値のテキスト色 */
-    line-height: 1.4; /* 値の行の高さ */
+    display: block;
+    /* 値もブロック要素 */
+    padding-left: 20px;
+    /* 値を右にインデント（調整してください） */
+    color: #333;
+    /* 値のテキスト色 */
+    line-height: 1.4;
+    /* 値の行の高さ */
 }
 
 /* ★以前の .about-info strong スタイルは不要なので削除またはコメントアウト */
@@ -241,7 +301,8 @@ img {
 
 /* サイト構造ツリーのコンテナ */
 .site-structure-map {
-    font-family: Arial, sans-serif; /* お好みのフォントに */
+    font-family: Arial, sans-serif;
+    /* お好みのフォントに */
     font-size: 16px;
     line-height: 1.5;
     color: #333;
@@ -249,32 +310,40 @@ img {
 
 /* 全てのリスト（<ul>）の基本スタイル */
 .site-structure-map ul {
-    list-style: none; /* デフォルトの箇条書きマークを消す */
+    list-style: none;
+    /* デフォルトの箇条書きマークを消す */
     margin: 0;
-    padding: 0; /* デフォルトの左パディングをリセット */
+    padding: 0;
+    /* デフォルトの左パディングをリセット */
 }
 
 /* 各リストアイテム（<li>）の基本スタイル */
 .site-structure-map li {
-    margin: 0; /* デフォルトのマージンをリセット */
+    margin: 0;
+    /* デフォルトのマージンをリセット */
     /* インデントは親のULで制御するため、ここにはpadding-leftを直接指定しない */
 }
 
 /* ネストされた各UL（サブ項目のリスト）のインデント */
 .site-structure-map li ul {
-    padding-left: 20px; /* ここで子リスト全体に左パディングを与えてインデント */
+    padding-left: 20px;
+    /* ここで子リスト全体に左パディングを与えてインデント */
 }
 
 /* 現在地の項目（オプション：太字や色付け） */
 .site-structure-map .current-page-item {
-    font-weight: bold; /* 現在地を太字にする例 */
-    color: #225c99;   /* 現在地の色を変える例 */
+    font-weight: bold;
+    /* 現在地を太字にする例 */
+    color: #225c99;
+    /* 現在地の色を変える例 */
 }
 
 /* トップレベルの項目にはインデントを適用しない */
-.site-structure-map > ul > li {
-    padding-left: 0; /* ルートの<li>にはパディングを適用しない */
+.site-structure-map>ul>li {
+    padding-left: 0;
+    /* ルートの<li>にはパディングを適用しない */
 }
+
 /* スマートフォンでの調整 */
 @media screen and (max-width: 767px) {
     body {
@@ -304,7 +373,8 @@ img {
 
     /* ★スマートフォンでの info-value のインデント調整 */
     .about-info .info-value {
-        padding-left: 15px; /* スマホではインデントを少し小さくするなどの調整 */
+        padding-left: 15px;
+        /* スマホではインデントを少し小さくするなどの調整 */
     }
 }
 
@@ -317,6 +387,7 @@ img {
          * サイトのデザインやコンテンツ量に合わせて調整してください。
          * 例: max-width: 960px;
          */
-        max-width: 960px; /* PCでの最大幅を960pxに設定 */
+        max-width: 960px;
+        /* PCでの最大幅を960pxに設定 */
     }
 }
