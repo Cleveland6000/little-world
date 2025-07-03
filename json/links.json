@@ -2,31 +2,87 @@
   {
     "title": "Cubase",
     "url": "https://www.steinberg.net/cubase/",
-    "categories": ["software", "music"]
+    "categories": [
+      "software",
+      "music"
+    ]
   },
   {
     "title": "Ableton Live",
     "url": "https://www.ableton.com/ja/live/",
-    "categories": ["software", "music"]
+    "categories": [
+      "software",
+      "music"
+    ]
   },
   {
     "title": "Visual Studio Code",
     "url": "https://code.visualstudio.com/",
-    "categories": ["software", "development"]
+    "categories": [
+      "software",
+      "development"
+    ]
   },
   {
     "title": "Blender",
     "url": "https://www.blender.org/",
-    "categories": ["software", "design", "3d"]
+    "categories": [
+      "software",
+      "design",
+      "3d"
+    ]
   },
   {
     "title": "openCanvas",
     "url": "https://www.open-canvas.net/",
-    "categories": ["software", "design", "illustration"]
+    "categories": [
+      "software",
+      "design",
+      "illustration"
+    ]
   },
   {
     "title": "Logic Pro",
     "url": "https://www.logicpro.jp/",
-    "categories": ["software", "music", "apple"]
+    "categories": [
+      "software",
+      "music",
+      "apple"
+    ]
+  },
+  {
+    "title": "Linktree",
+    "url": "https://linktr.ee/silverbullet777",
+    "categories": [
+      "link"
+    ]
+  },
+  {
+    "title": "Pixiv",
+    "url": "https://www.pixiv.net/users/80311523",
+    "categories": [
+      "link"
+    ]
+  },
+  {
+    "title": "TETR.IO",
+    "url": "https://ch.tetr.io/u/cloverxd",
+    "categories": [
+      "link"
+    ]
+  },
+  {
+    "title": "GitHub",
+    "url": "https://github.com/Cleveland6000",
+    "categories": [
+      "link"
+    ]
+  },
+  {
+    "title": "Steam",
+    "url": "https://steamcommunity.com/profiles/76561199088707519/",
+    "categories": [
+      "link"
+    ]
   }
 ]
