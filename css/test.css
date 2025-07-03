@@ -173,14 +173,13 @@ li {
 #backToTopBtn {
   position: fixed; /* 画面に固定する */
   top: 20px;     /* 画面の上端から20pxの位置 */
-  right: 20px;   /* 画面の右端から20pxの位置 */
+  left: 20px;   /* 画面の右端から20pxの位置 */
   z-index: 1000; /* 他の要素より手前に表示されるようにする（必要に応じて調整） */
 
   /* ボタンの見た目を整えるスタイル */
   background-color: rgba(0, 0, 0, 0.7); /* 背景色を半透明の黒に */
   color: white;      /* 文字色 */
   padding: 12px 18px; /* 内側の余白 */
-  border-radius: 5px; /* 角を少し丸くする */
   text-decoration: none; /* リンクの下線を消す */
   font-size: 16px;   /* フォントサイズ */
   font-weight: bold; /* フォントを太字に */
