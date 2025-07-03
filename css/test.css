@@ -171,7 +171,6 @@ li {
 
 
 #backToTopBtn {
-  display: none; /* 初期状態では非表示（JavaScriptで制御） */
   position: fixed; /* 画面に固定する */
   top: 20px;     /* 画面の上端から20pxの位置 */
   right: 20px;   /* 画面の右端から20pxの位置 */
