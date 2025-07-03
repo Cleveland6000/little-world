@@ -23,10 +23,10 @@
 
         <div id="music-links">
         </div>
-        <script src="/little-world/js/a.js">
-            // ページが読み込まれたら、'music-links' に 'music' カテゴリのリンクを表示
+        <script src="/js/a.js"></script>
+        <script>
             document.addEventListener('DOMContentLoaded', () => {
-                displayLinksFromJsonByCategory('music-links', 'music', '/little-world/json/links.json');
+                displayLinksFromJsonByCategory('music-links', 'music', './json/links.json');
             });
         </script>
 
