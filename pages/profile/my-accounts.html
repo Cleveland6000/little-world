@@ -19,6 +19,17 @@
         <h1>My Accounts</h1>
     </header>
     <main>
+
+
+        <div id="music-links">
+        </div>
+        <script src="/js/a.js">
+            // ページが読み込まれたら、'music-links' に 'music' カテゴリのリンクを表示
+            document.addEventListener('DOMContentLoaded', () => {
+                displayLinksFromJsonByCategory('music-links', 'music', '/json/links.js');
+            });
+        </script>
+
         <ul>
             <li><a href="https://linktr.ee/silverbullet777" target="_blank" rel="noopener noreferrer">Linktree</a></li>
             <li><a href="https://www.pixiv.net/users/80311523" target="_blank" rel="noopener noreferrer">Pixiv</a></li>
