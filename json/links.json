@@ -131,5 +131,12 @@
     "categories": [
       "markup-language"
     ]
+  },
+  {
+    "title": "Visual Studio Code",
+    "url": "https: //code.visualstudio.com/",
+    "categories": [
+      "code-editor"
+    ]
   }
 ]

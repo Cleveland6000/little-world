@@ -36,6 +36,8 @@
                 </dt>
                 <dd>
                     <dl>
+                        <dt>Code Editors</dt>
+                        <dd id="code-editors"></dd>
                         <dt>Programming Languages</dt>
                         <dd id="programming-languages"></dd>
                         <dt>Markup Languages</dt>
@@ -52,6 +54,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             displayLinksFromJsonByCategory('accounts', 'account', '/little-world/json/links.json');
+            displayLinksFromJsonByCategory('code-editors', 'code-editor', '/little-world/json/links.json');
             displayLinksFromJsonByCategory('programming-languages', 'programming-language', '/little-world/json/links.json');
             displayLinksFromJsonByCategory('markup-languages', 'markup-language', '/little-world/json/links.json');
         });
