@@ -20,7 +20,6 @@
     </header>
     <main>
         <section>
-            <h2>Who I Am</h2>
             <dl>
                 <dt>Name</dt>
                 <dd>Gamushiro</dd>
@@ -37,53 +36,25 @@
             </dl>
         </section>
         <section>
-            <h2>Activities</h2>
-            <ul>
-                <li>
-                    Games Played
-                    <ul>
-                        <li>
-                            Tetris
-                            <ul>
-                                <li>TETR.IO</li>
-                                <li>Puyo Puyo Tetris 2</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    Coding
-                    <ul>
-                        <li>
-                            Programming
-                            <ul>
-                                <li>C++</li>
-                                <li>C#</li>
-                            </ul>
-                        </li>
-                        <li>
-                            Markup
-                            <ul>
-                                <li>HTML</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2>Achievements</h2>
             <dl>
-                <dt>Tetris 40L Sprint PB</dt>
-                <dd>
-                    <dl>
-                        <dt>TETR.IO</dt>
-                        <dd>0:36.155s</dd>
-                        <dt>Puyo Puyo Tetris 2</dt>
-                        <dd>0:43.35s</dd>
-                    </dl>
-                </dd>
+                <dt>Gamushiro's Accounts</dt>
+                <dd id="accounts"></dd>
+                <dt>Platforms Gamushiro Uses</dt>
+                <dd id="platforms"></dd>
+                <dt>Programming Languages Gamushiro Uses</dt>
+                <dd id="programming-languages"></dd>
+                <dt>Markup Languages Gamushiro Uses</dt>
+                <dd id="markup-languages"></dd>
             </dl>
+            <script src="/little-world/js/a.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    displayLinksFromJsonByCategory('accounts', 'account', '/little-world/json/links.json');
+                    displayLinksFromJsonByCategory('platforms', 'platform', '/little-world/json/links.json');
+                    displayLinksFromJsonByCategory('programming-languages', 'programming-language', '/little-world/json/links.json');
+                    displayLinksFromJsonByCategory('markup-languages', 'markup-language', '/little-world/json/links.json');
+                });
+            </script>
         </section>
     </main>
     <footer>
