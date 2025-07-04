@@ -124,5 +124,12 @@
     "categories": [
       "programming-language"
     ]
+  },
+  {
+    "title": "HTML",
+    "url": "https://whatwg.org/",
+    "categories": [
+      "markup-language"
+    ]
   }
 ]
