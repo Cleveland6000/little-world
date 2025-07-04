@@ -1,56 +1,5 @@
 [
   {
-    "title": "Cubase",
-    "url": "https://www.steinberg.net/cubase/",
-    "categories": [
-      "software",
-      "music"
-    ]
-  },
-  {
-    "title": "Ableton Live",
-    "url": "https://www.ableton.com/ja/live/",
-    "categories": [
-      "software",
-      "music"
-    ]
-  },
-  {
-    "title": "Visual Studio Code",
-    "url": "https://code.visualstudio.com/",
-    "categories": [
-      "software",
-      "development"
-    ]
-  },
-  {
-    "title": "Blender",
-    "url": "https://www.blender.org/",
-    "categories": [
-      "software",
-      "design",
-      "3d"
-    ]
-  },
-  {
-    "title": "openCanvas",
-    "url": "https://www.open-canvas.net/",
-    "categories": [
-      "software",
-      "design",
-      "illustration"
-    ]
-  },
-  {
-    "title": "Logic Pro",
-    "url": "https://www.logicpro.jp/",
-    "categories": [
-      "software",
-      "music",
-      "apple"
-    ]
-  },
-  {
     "title": "Linktree",
     "url": "https://linktr.ee/silverbullet777",
     "categories": [
@@ -58,7 +7,7 @@
     ]
   },
   {
-    "title": "Pixiv",
+    "title": "pixiv",
     "url": "https://www.pixiv.net/users/80311523",
     "categories": [
       "account"
@@ -140,6 +89,12 @@
     "categories": [
       "account"
     ]
+  },
+  {
+    "title": "pixiv",
+    "url": "https: //www.pixiv.net/",
+    "categories": [
+      "platform"
+    ]
   }
-
 ]

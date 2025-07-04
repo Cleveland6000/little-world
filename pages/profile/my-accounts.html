@@ -16,14 +16,18 @@
                 <li><a href="self-introduction.html">Self Introduction</a></li>
             </ul>
         </nav>
-        <h1>My Accounts</h1>
     </header>
     <main>
+        <h2>Gamushiro's Accounts</h2>
         <div id="accounts"></div>
+        <h2>Platforms Gamushiro uses</h2>
+        <div id="platforms"></div>
+
         <script src="/little-world/js/a.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 displayLinksFromJsonByCategory('accounts', 'account', '/little-world/json/links.json');
+                displayLinksFromJsonByCategory('platforms', 'platform', '/little-world/json/links.json');
             });
         </script>
     </main>
