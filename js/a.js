@@ -11,6 +11,12 @@ async function displayLinksFromJsonByCategory(targetElementId, category, jsonFil
         return;
     }
 
+    // 自身のドメイン（ベースURL）を定義
+    // GitHub Pagesのユーザーサイトの場合: "https://cleveland6000.github.io/"
+    // GitHub Pagesのプロジェクトサイトの場合: "https://cleveland6000.github.io/little-world/"
+    // 今回のケースでは、プロジェクトサイトのURLに合わせて定義します
+    const baseUrl = 'https://cleveland6000.github.io/little-world/'; // ここを自身のサイトのベースURLに設定
+
     try {
         // JSONファイルを非同期で読み込む
         const response = await fetch(jsonFilePath);
@@ -24,12 +30,36 @@ async function displayLinksFromJsonByCategory(targetElementId, category, jsonFil
 
         linksData.forEach(linkItem => {
             // 指定されたカテゴリがこのリンクに含まれているかチェック
-            // categoriesプロパティが配列であり、かつ指定カテゴリを含むか確認
             if (Array.isArray(linkItem.categories) && linkItem.categories.includes(category)) {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
                 a.href = linkItem.url;
                 a.textContent = linkItem.title;
+
+                // ここから修正点: 自身のサイトのURLで始まらない場合に外部リンクとみなす
+                // linkItem.url が相対パスの場合も考慮して、baseURLとの比較で判断
+                if (!linkItem.url.startsWith('/') && !linkItem.url.startsWith(baseUrl)) {
+                    // / で始まらない（相対パスではない）かつ、自身のbaseURLでも始まらない場合
+                    a.target = '_blank'; // 新しいタブで開く
+                    a.rel = 'noopener noreferrer'; // セキュリティ対策
+                } else if (linkItem.url.startsWith(baseUrl) && linkItem.url.length > baseUrl.length) {
+                    // baseUrlで始まるが、かつbaseUrlより長いURLの場合（例: https://cleveland6000.github.io/little-world/page/xyz.html）
+                    // これは内部リンクなので、target="_blank" を設定しない
+                    // (ただし、もし明示的に内部リンクも別タブで開きたい場合はここを変更)
+                } else if (!linkItem.url.startsWith('/') && (linkItem.url.startsWith('http://') || linkItem.url.startsWith('https://'))) {
+                    // 絶対URLだが、自身のbaseUrlとは異なる場合（例: https://example.com/）
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                }
+                // よりシンプルな判定ロジックに書き直すなら、以下のようにできます:
+                // URLが絶対URL（http://またはhttps://で始まる）であり、かつ自身のベースURLで始まらない場合
+                // const isAbsoluteUrl = linkItem.url.startsWith('http://') || linkItem.url.startsWith('https://');
+                // if (isAbsoluteUrl && !linkItem.url.startsWith(baseUrl)) {
+                //     a.target = '_blank';
+                //     a.rel = 'noopener noreferrer';
+                // }
+
+
                 li.appendChild(a);
                 ul.appendChild(li);
             }
