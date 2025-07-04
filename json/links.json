@@ -110,5 +110,12 @@
     "categories": [
       "platform"
     ]
+  },
+  {
+    "title": "C++",
+    "url": "https://isocpp.org/",
+    "categories": [
+      "programming-language"
+    ]
   }
 ]
