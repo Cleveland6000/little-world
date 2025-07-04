@@ -8,6 +8,7 @@
     <link rel="icon" href="../../images/icon.png">
 </head>
 
+
 <body>
     <header>
         <nav>
@@ -28,10 +29,6 @@
                 </dd>
                 <dt>My Gender</dt>
                 <dd>Male</dd>
-            </dl>
-        </section>
-        <section>
-            <dl>
                 <dt>My Accounts</dt>
                 <dd id="accounts"></dd>
                 <dt>Platforms I Use</dt>
@@ -41,20 +38,20 @@
                 <dt>Markup Languages I Use</dt>
                 <dd id="markup-languages"></dd>
             </dl>
-            <script src="/little-world/js/a.js"></script>
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    displayLinksFromJsonByCategory('accounts', 'account', '/little-world/json/links.json');
-                    displayLinksFromJsonByCategory('platforms', 'platform', '/little-world/json/links.json');
-                    displayLinksFromJsonByCategory('programming-languages', 'programming-language', '/little-world/json/links.json');
-                    displayLinksFromJsonByCategory('markup-languages', 'markup-language', '/little-world/json/links.json');
-                });
-            </script>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 Gamushiro</p>
     </footer>
+    <script src="/little-world/js/a.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            displayLinksFromJsonByCategory('accounts', 'account', '/little-world/json/links.json');
+            displayLinksFromJsonByCategory('platforms', 'platform', '/little-world/json/links.json');
+            displayLinksFromJsonByCategory('programming-languages', 'programming-language', '/little-world/json/links.json');
+            displayLinksFromJsonByCategory('markup-languages', 'markup-language', '/little-world/json/links.json');
+        });
+    </script>
 </body>
 
 </html>
