@@ -117,5 +117,12 @@
     "categories": [
       "programming-language"
     ]
+  },
+  {
+    "title": "C#",
+    "url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+    "categories": [
+      "programming-language"
+    ]
   }
 ]
