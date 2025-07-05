@@ -6,6 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/little-world/images/icon.png">
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
     <style>
         body {
             margin: 0;
@@ -87,92 +94,22 @@
     </style>
 </head>
 
-
 <body>
     <div class="sidebar">
         <a href="/little-world/index.html">Home</a>
         <ul>
-            <li><a href="/little-world/pages/math.html">Math</a></li>
+            <li><a href="/little-world/pages/self-introduction.html">Self Introduction</a></li>
         </ul>
     </div>
     <div class="main-content">
-        <h1>Self Introduction</h1>
-        <dl>
-            <dt>Name</dt>
-            <dd>Gamushiro</dd>
-            <dt>Aliases</dt>
-            <dd>
-                <ul>
-                    <li>CloverXD</li>
-                    <li>Cleveland6000</li>
-                    <li>M3N7H0L</li>
-                </ul>
-            </dd>
-            <dt>Gender</dt>
-            <dd>Male</dd>
-            <dt>Location</dt>
-            <dd>Japan</dd>
-            <dt>Conversational Languages</dt>
-            <dd>
-                <ul>
-                    <li>Japanese</li>
-                    <li>English</li>
-                </ul>
-            </dd>
-            <dt>Favorite Music Genres</dt>
-            <dd>
-                <ul>
-                    <li>Extratone</li>
-                    <li>J-Core</li>
-                    <li>Psychedelic Trance</li>
-                    <li>Schranz</li>
-                    <li>Speedcore</li>
-                </ul>
-            </dd>
-            <dt>Familiar Programming Languages</dt>
-            <dd>
-                <ul>
-                    <li>C++</li>
-                    <li>C#</li>
-                </ul>
-            </dd>
-            <dt>Familiar Markup Languages</dt>
-            <dd>
-                <ul>
-                    <li>HTML</li>
-                </ul>
-            </dd>
-            <dt>Accounts</dt>
-            <dd id="accounts"></dd>
-        </dl>
-        <h2>Workspace</h2>
-        <dl>
-            <dt>Digital Audio Workstation</dt>
-            <dd>
-                <ul>
-                    <li>Cubase</li>
-                    <li>Ableton Live</li>
-                </ul>
-            </dd>
-            <dt>Digital Illustration Software</dt>
-            <dd>
-                <ul>
-                    <li>openCanvas</li>
-                </ul>
-            </dd>
-            <dt>Code Editors</dt>
-            <dd>
-                <ul>
-                    <li>Visual Studio Code</li>
-                </ul>
-            </dd>
-            <dt>Version Control System</dt>
-            <dd>
-                <ul>
-                    <li>Git</li>
-                </ul>
-            </dd>
-        </dl>
+        <h1>n次元空間における2点間の距離の公式</h1>
+        $$d = \sqrt{\sum_{i=1}^{n} (b_i - a_i)^2}$$
+        <p>ここで、</p>
+        <ul>
+            <li>$a_i$ は点Aの$i$番目の座標</li>
+            <li>$b_i$ は点Bの$i$番目の座標</li>
+            <li>$\sum_{i=1}^{n}$ は、$i=1$から$n$までの項の総和を表します。</li>
+        </ul>
     </div>
     <script src="/little-world/js/a.js"></script>
     <script>
