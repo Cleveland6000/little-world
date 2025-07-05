@@ -10,6 +10,41 @@
         dt {
             font-weight: bold;
         }
+
+        header {
+            position: fixed;
+            /* 画面に固定する */
+            top: 0;
+            /* 上端に配置 */
+            left: 0;
+            /* 左端に配置 */
+            width: 100%;
+            /* 幅を画面いっぱいに */
+            background-color: white;
+            /* 背景色（例として濃いグレー） */
+            color: white;
+            /* テキスト色 */
+            padding: 10px;
+            /* 上下の余白 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* 軽い影で立体感を出す */
+            z-index: 1000;
+            /* 他のコンテンツの上に表示されるようにする */
+
+        }
+
+        body {
+            padding-top: 30px;
+            /* ヘッダーの高さに合わせて調整してください */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
     </style>
 </head>
 
@@ -19,9 +54,9 @@
         <nav>
             <a href="/little-world/index.html">Home</a>
         </nav>
-        <h1>Self Introduction</h1>
     </header>
     <main>
+        <h1>Self Introduction</h1>
         <section>
             <dl>
                 <dt>Name</dt>
