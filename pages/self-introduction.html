@@ -23,6 +23,12 @@
             /* 同上 (新しいプロパティ名) */
         }
 
+        /* ここから追加 */
+        .main-content dl {
+            padding-left: 10px;
+            /* これで全体がインデントされます */
+        }
+
         .sidebar {
             width: 150px;
             background-color: #ececec;
@@ -43,6 +49,10 @@
             box-sizing: border-box;
             flex-shrink: 0;
             /* Flexboxのbody内で縮まないようにするが、fixedなので厳密には不要 */
+        }
+
+        dd ul {
+            list-style-type: none;
         }
 
         .sidebar ul {
