@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サイドバー固定レイアウト</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #2f3136;
+            color: #ffffff;
+            /* ここから追加・変更 */
+            position: fixed; /* 画面に固定 */
+            top: 0;          /* 画面の一番上から */
+            left: 0;         /* 画面の一番左から */
+            height: 100vh;   /* 画面の高さ全体に広がる */
+            overflow-y: auto; /* サイドバーのコンテンツがはみ出したらスクロール */
+            /* ここまで追加・変更 */
+            padding: 20px;
+            box-sizing: border-box;
+            flex-shrink: 0; /* Flexboxのbody内で縮まないようにするが、fixedなので厳密には不要 */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            cursor: pointer;
+            border-bottom: 1px solid #4f545c;
+        }
+
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar li:hover {
+            background-color: #40444b;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            background-color: #36393f;
+            color: #dcddde;
+            padding: 20px;
+            overflow-y: auto;
+            /* ここから追加 */
+            margin-left: 250px; /* 固定されたサイドバーの幅分、メインコンテンツを右にずらす */
+            /* ここまで追加 */
+        }
+
+        h1, h2 {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>メニュー</h2>
+        <ul>
+            <li>ホーム</li>
+            <li>メッセージ</li>
+            <li>設定</li>
+            <li>プロフィール</li>
+            <li>サービスA</li>
+            <li>サービスB</li>
+            <li>サービスC</li>
+            <li>サービスD</li>
+            <li>サービスE</li>
+            <li>サービスF</li>
+            <li>サービスG</li>
+            <li>サービスH</li>
+            <li>サービスI</li>
+            <li>サービスJ</li>
+            <li>サービスK</li>
+            <li>サービスL</li>
+            <li>サービスM</li>
+            <li>サービスN</li>
+            <li>サービスO</li>
+            <li>サービスP</li>
+            <li>サービスQ</li>
+            <li>サービスR</li>
+            <li>サービスS</li>
+            <li>サービスT</li>
+            <li>サービスU</li>
+            <li>サービスV</li>
+            <li>サービスW</li>
+            <li>サービスX</li>
+            <li>サービスY</li>
+            <li>サービスZ</li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>メインコンテンツ</h1>
+        <p>ここにメインの内容が表示されます。このエリアをスクロールしても、左側のメニューは固定されたままです。</p>
+        <p>たくさんのコンテンツを入れて、スクロールバーが表示されるか確認してみましょう。</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+</body>
+</html>

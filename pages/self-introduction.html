@@ -7,132 +7,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/little-world/images/icon.png">
     <style>
-        dt {
-            font-weight: bold;
-            margin-top: 0.5em;
-        }
-
-        header {
-            position: fixed;
-            /* 画面に固定する */
-            top: 0;
-            /* 上端に配置 */
-            left: 0;
-            /* 左端に配置 */
-            width: 100%;
-            /* 幅を画面いっぱいに */
-            background-color: white;
-            /* 背景色（例として濃いグレー） */
-            color: white;
-            /* テキスト色 */
-            padding: 10px;
-            /* 上下の余白 */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            /* 軽い影で立体感を出す */
-            z-index: 1000;
-            /* 他のコンテンツの上に表示されるようにする */
-
-        }
-
         body {
-            padding-top: 30px;
-            /* ヘッダーの高さに合わせて調整してください */
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+            min-height: 100vh;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #666;
-            font-size: 0.9em;
+        .sidebar a {
+            padding: 10px 0;
+            cursor: pointer;
+            word-wrap: break-word;
+            /* 長い単語を強制的に折り返す */
+            overflow-wrap: break-word;
+            /* 同上 (新しいプロパティ名) */
+        }
+
+        .sidebar {
+            width: 150px;
+            background-color: #ececec;
+            color: #ffffff;
+            /* ここから追加・変更 */
+            position: fixed;
+            /* 画面に固定 */
+            top: 0;
+            /* 画面の一番上から */
+            left: 0;
+            /* 画面の一番左から */
+            height: 100vh;
+            /* 画面の高さ全体に広がる */
+            overflow-y: auto;
+            /* サイドバーのコンテンツがはみ出したらスクロール */
+            /* ここまで追加・変更 */
+            padding: 20px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            /* Flexboxのbody内で縮まないようにするが、fixedなので厳密には不要 */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            cursor: pointer;
+            border-bottom: 1px solid #000000;
+        }
+
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar li:hover {
+            background-color: #40444b;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 20px;
+            overflow-y: auto;
+            /* ここから追加 */
+            margin-left: 150px;
+            /* 固定されたサイドバーの幅分、メインコンテンツを右にずらす */
+            /* ここまで追加 */
+        }
+
+        h1,
+        h2 {
+            color: #000000;
         }
     </style>
 </head>
 
 
 <body>
-    <header>
-        <nav>
-            <a href="/little-world/index.html">Home</a>
-        </nav>
-    </header>
-    <main>
+    <div class="sidebar">
+        <a href="/little-world/index.html">Home</a>
+    </div>
+    <div class="main-content">
         <h1>Self Introduction</h1>
-        <section>
-            <dl>
-                <dt>Name</dt>
-                <dd>Gamushiro</dd>
-                <dt>Aliases</dt>
-                <dd>
-                    <ul>
-                        <li>CloverXD</li>
-                        <li>Cleveland6000</li>
-                        <li>M3N7H0L</li>
-                    </ul>
-                </dd>
-                <dt>Gender</dt>
-                <dd>Male</dd>
-                <dt>Location</dt>
-                <dd>Japan</dd>
-                <dt>Conversational Languages</dt>
-                <dd>
-                    <ul>
-                        <li>Japanese</li>
-                        <li>English</li>
-                    </ul>
-                </dd>
-                <dt>Favorite Music Genres</dt>
-                <dd>
-                    <ul>
-                        <li>Extratone</li>
-                        <li>J-Core</li>
-                        <li>Psychedelic Trance</li>
-                        <li>Schranz</li>
-                        <li>Speedcore</li>
-                    </ul>
-                </dd>
-                <dt>Familiar Programming Languages</dt>
-                <dd>
-                    <ul>
-                        <li>C++</li>
-                        <li>C#</li>
-                    </ul>
-                </dd>
-                <dt>Familiar Markup Languages</dt>
-                <dd>
-                    <ul>
-                        <li>HTML</li>
-                    </ul>
-                </dd>
-                <dt>Workspace</dt>
-                <dd>
-                    <dl>
-                        <dt>Digital Audio Workstation</dt>
-                        <dd>
-                            <ul>
-                                <li>Cubase</li>
-                                <li>Ableton Live</li>
-                            </ul>
-                        </dd>
-                        <dt>Digital Illustration Software</dt>
-                        <dd>
-                            <ul>
-                                <li>openCanvas</li>
-                            </ul>
-                        </dd>
-                        <dt>Code Editors</dt>
-                        <dd>Visual Studio Code</dd>
-                        <dt>Version Control System</dt>
-                        <dd>Git</dd>
-                    </dl>
-                </dd>
-                <dt>Accounts</dt>
-                <dd id="accounts"></dd>
-            </dl>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Gamushiro</p>
-    </footer>
+        <dl>
+            <dt>Name</dt>
+            <dd>Gamushiro</dd>
+            <dt>Aliases</dt>
+            <dd>
+                <ul>
+                    <li>CloverXD</li>
+                    <li>Cleveland6000</li>
+                    <li>M3N7H0L</li>
+                </ul>
+            </dd>
+            <dt>Gender</dt>
+            <dd>Male</dd>
+            <dt>Location</dt>
+            <dd>Japan</dd>
+            <dt>Conversational Languages</dt>
+            <dd>
+                <ul>
+                    <li>Japanese</li>
+                    <li>English</li>
+                </ul>
+            </dd>
+            <dt>Favorite Music Genres</dt>
+            <dd>
+                <ul>
+                    <li>Extratone</li>
+                    <li>J-Core</li>
+                    <li>Psychedelic Trance</li>
+                    <li>Schranz</li>
+                    <li>Speedcore</li>
+                </ul>
+            </dd>
+            <dt>Familiar Programming Languages</dt>
+            <dd>
+                <ul>
+                    <li>C++</li>
+                    <li>C#</li>
+                </ul>
+            </dd>
+            <dt>Familiar Markup Languages</dt>
+            <dd>
+                <ul>
+                    <li>HTML</li>
+                </ul>
+            </dd>
+            <dt>Workspace</dt>
+            <dd>
+                <dl>
+                    <dt>Digital Audio Workstation</dt>
+                    <dd>
+                        <ul>
+                            <li>Cubase</li>
+                            <li>Ableton Live</li>
+                        </ul>
+                    </dd>
+                    <dt>Digital Illustration Software</dt>
+                    <dd>
+                        <ul>
+                            <li>openCanvas</li>
+                        </ul>
+                    </dd>
+                    <dt>Code Editors</dt>
+                    <dd>Visual Studio Code</dd>
+                    <dt>Version Control System</dt>
+                    <dd>Git</dd>
+                </dl>
+            </dd>
+            <dt>Accounts</dt>
+            <dd id="accounts"></dd>
+        </dl>
+    </div>
     <script src="/little-world/js/a.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
