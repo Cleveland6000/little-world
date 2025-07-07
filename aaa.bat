@@ -2,8 +2,8 @@
 setlocal enabledelayedexpansion
 
 rem --- ここから設定 ---
-set "input_directory=C:\Users\rkowp\Documents\GitHub\little-world\html"
-set "output_filepath=C:\Users\rkowp\Documents\GitHub\little-world\json"
+set "input_directory=html"
+set "output_filepath=json"
 rem --- ここまで設定 ---
 
 echo.
