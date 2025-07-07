@@ -45,7 +45,6 @@ body {
 
 .sidebar li {
     padding: 10px 0;
-    cursor: pointer;
 }
 
 .sidebar li:hover {
@@ -53,6 +52,7 @@ body {
 }
 
 .sidebar a {
+    cursor: pointer;
     margin: -10px 0; /* liのpaddingと同じ分だけネガティブマージンを設定し、aタグを外側に拡張 */
     padding: 10px 0; /* aタグの内側に元のpaddingを適用して、テキスト位置を維持 */
     word-wrap: break-word;
