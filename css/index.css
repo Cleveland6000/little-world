@@ -5,14 +5,6 @@ body {
     min-height: 100vh;
 }
 
-.sidebar a {
-    padding: 10px 0;
-    cursor: pointer;
-    word-wrap: break-word;
-    /* 長い単語を強制的に折り返す */
-    overflow-wrap: break-word;
-    /* 同上 (新しいプロパティ名) */
-}
 
 /* ここから追加 */
 .main-content dl {
@@ -42,26 +34,33 @@ body {
     /* Flexboxのbody内で縮まないようにするが、fixedなので厳密には不要 */
 }
 
+
+.sidebar li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+.sidebar li:hover {
+    background-color: #ffffff;
+}
+.sidebar a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.sidebar li a {
+    display: block;
+}
 .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sidebar li {
-    padding: 10px 0;
-    cursor: pointer;
-    border-bottom: 1px solid #969696;
-}
 
 
-.sidebar li:last-child {
-    border-bottom: none;
-}
 
-.sidebar li:hover {
-    background-color: #ffffff;
-}
+
+
+
 
 .main-content img {
     max-width: 30%;
