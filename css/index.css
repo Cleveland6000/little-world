@@ -1,240 +1,96 @@
-@charset "UTF-8";
-
 body {
     margin: 0;
-    padding: 20px;
-    /* 全体に余白 */
-    font-family: "游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-    line-height: 1.6;
-    font-size: 16px;
-    background-color: #f0f2f5;
-    /* 背景色 */
-    color: #333;
+    font-family: sans-serif;
     display: flex;
-    /* コンテンツを中央に寄せるため */
-    justify-content: center;
-    /* 水平方向の中央揃え */
-    align-items: flex-start;
-    /* 垂直方向の上寄せ */
     min-height: 100vh;
-    /* 画面全体を高さとする */
 }
 
-#container {
-    max-width: 600px;
-    /* Linktreeのような中心に寄ったデザイン */
-    width: 100%;
+.sidebar a {
+    padding: 10px 0;
+    cursor: pointer;
+    word-wrap: break-word;
+    /* 長い単語を強制的に折り返す */
+    overflow-wrap: break-word;
+    /* 同上 (新しいプロパティ名) */
+}
+
+/* ここから追加 */
+.main-content dl {
+    padding-left: 10px;
+    /* これで全体がインデントされます */
+}
+
+.sidebar {
+    width: 150px;
+    background-color: #ececec;
+    color: #000000;
+    /* ここから追加・変更 */
+    position: fixed;
+    /* 画面に固定 */
+    top: 0;
+    /* 画面の一番上から */
+    left: 0;
+    /* 画面の一番左から */
+    height: 100vh;
+    /* 画面の高さ全体に広がる */
+    overflow-y: auto;
+    /* サイドバーのコンテンツがはみ出したらスクロール */
+    /* ここまで追加・変更 */
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    /* Flexboxのbody内で縮まないようにするが、fixedなので厳密には不要 */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #969696;
+}
+
+
+.sidebar li:last-child {
+    border-bottom: none;
+}
+
+.sidebar li:hover {
     background-color: #ffffff;
-    padding: 30px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* border-radius: 10px; */
-    text-align: left;
-    /* コンテナ内のテキストはデフォルトで左揃え */
 }
 
-.about-info {
-    margin: 20px 0;
-    text-align: left;
-    padding: 0 10px;
-    line-height: 1.6;
-    color: #555;
-}
-.about-info ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.about-info li {
-    margin-bottom: 15px;
-}
-.about-info .info-value ul li a {
-    display: block;
-    margin-bottom: 10px;
-}
-.about-info .info-value ul li:last-child a {
-    margin-bottom: 0;
-}
-.about-info .info-value ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.about-info .info-value ul li {
-    margin: 0;
-    padding: 0;
-    line-height: 1.4;
-    display: block;
-}
-.about-info .info-label {
-    display: block;
-    font-weight: bold;
-    color: #213955;
-    margin-bottom: 5px;
-    font-size: 1.1em;
-}
-.about-info .info-value {
-    display: block;
-    padding-left: 20px;
-    color: #333;
-    line-height: 1.4;
+.main-content img {
+    max-width: 30%;
+    height: auto;
 }
 
-
-
-
-header {
-    margin-bottom: 30px;
-    background-color: #213955;
-    /* ヘッダーの背景色 */
-    color: #FFFFFF;
-    padding: 20px 0;
-    /* border-radius: 8px 8px 0 0; */
-    margin: -30px -20px 30px -20px;
-    /* コンテナのパディングを相殺し、端まで伸ばす */
-    text-align: center;
-    /* ヘッダーのタイトルと説明は中央寄せを維持 */
+.main-content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    overflow-y: auto;
+    /* ここから追加 */
+    margin-left: 200px;
+    /* 固定されたサイドバーの幅分、メインコンテンツを右にずらす */
+    /* ここまで追加 */
 }
 
 h1 {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    color: #FFFFFF;
+    color: #000000;
 }
 
-.description {
-    line-height: 1.4;
-    color: #e0e0e0;
-    margin: 10px 0 0 0;
-    font-size: 15px;
-}
-
-/* 活動名義一覧とアカウントとかの見出しスタイルを統一 */
 h2 {
-    font-size: 22px;
-    margin: 20px 0 15px 0;
-    padding: 5px 0;
-    border-bottom: 2px solid #ddd;
-    color: #213955;
-    text-align: left;
-    /* 各セクションの見出しは左揃え */
+    color: #000000;
+    margin-top: 1.5em;
 }
 
-.link-section {
-    margin-bottom: 30px;
-}
-
-
-ul {
-    list-style: none;
-    /* リストのマークを削除 */
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 15px;
-}
-
-
-.button {
-    display: block;
-    /* ← これは維持 */
-    background-color: #ffffff;
-    color: #333;
-    padding: 15px 20px;
-    text-decoration: none;
-    border: 1px solid #ddd;
-    font-size: 18px;
+dt {
     font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-
-    /* ★ここから追加・修正★ */
-    max-width: 300px;
-    /* 例えば最大幅を300pxに制限 */
-    margin-left: auto;
-    /* 中央寄せ */
-    margin-right: auto;
-    /* 中央寄せ */
-    /* ★ここまで追加・修正★ */
-}
-
-.button:hover {
-    background-color: #f5f5f5;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    border-color: #bbb;
-}
-
-footer {
-    margin-top: 40px;
-    font-size: 14px;
-    color: #888;
-    text-align: left;
-    /* フッターも左揃え */
-}
-
-
-/* css/index.css に追加 */
-img {
-    max-width: 70%;
-    /* 親要素の幅を超えないようにする */
-    height: auto;
-    /* 縦横比を維持 */
-    display: block;
-    /* 中央寄せなどにしやすくするため */
-    margin: 20px auto;
-    /* 上下に余白、左右中央寄せ */
-}
-
-
-
-/* スマートフォンでの調整 */
-@media screen and (max-width: 767px) {
-    body {
-        padding: 15px;
-    }
-
-    #container {
-        padding: 20px 15px;
-    }
-
-    header {
-        margin: -20px -15px 20px -15px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    a {
-        padding: 12px 15px;
-        font-size: 16px;
-    }
-
-    /* ★スマートフォンでの info-value のインデント調整 */
-    .about-info .info-value {
-        padding-left: 15px;
-        /* スマホではインデントを少し小さくするなどの調整 */
-    }
-}
-
-/* PC (タブレット以上の画面幅) での調整 */
-/* 768px (スマホ最大幅+1) 以上の画面幅に適用 */
-@media screen and (min-width: 768px) {
-    #container {
-        /*
-         * 現在の600pxから、例えば960pxや1000pxに広げます。
-         * サイトのデザインやコンテンツ量に合わせて調整してください。
-         * 例: max-width: 960px;
-         */
-        max-width: 960px;
-        /* PCでの最大幅を960pxに設定 */
-    }
+    margin-top: 1.0em;
+    color: #2c3e50;
 }
