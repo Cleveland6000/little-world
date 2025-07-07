@@ -42,10 +42,25 @@ body {
     /* Flexboxのbody内で縮まないようにするが、fixedなので厳密には不要 */
 }
 
-
 .sidebar ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #4f545c;
+}
+
+
+.sidebar li:last-child {
+    border-bottom: none;
+}
+
+.sidebar li:hover {
+    background-color: #ffffff;
 }
 
 .main-content img {
