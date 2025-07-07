@@ -23,16 +23,22 @@ function generateNavigation() {
   const ul = document.createElement('ul');
 
   pages.forEach(page => {
-    if (page.url !== currentPageFileName) {
-      let linkName = page.url.replace('.html', '');
+    const li = document.createElement('li');
+    let linkName = page.url.replace('.html', ''); // .html を削除
 
-      const li = document.createElement('li');
+    if (page.url === currentPageFileName) {
+      // 現在のページの場合、リンクではなくテキストとして表示
+      const span = document.createElement('span');
+      span.textContent = linkName;
+      li.appendChild(span);
+    } else {
+      // それ以外のページの場合、リンクとして表示
       const a = document.createElement('a');
       a.href = page.url;
       a.textContent = linkName;
       li.appendChild(a);
-      ul.appendChild(li);
     }
+    ul.appendChild(li);
   });
   navElement.appendChild(ul);
 }
