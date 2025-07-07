@@ -1,6 +1,7 @@
 const pages = [
   { url: "digital-illustration.html" },
   { url: "english-grammar-notes.html" },
+  { url: "index.html" },
   { url: "math.html" },
   { url: "nothing-to-see-here.html" },
   { url: "self-introduction.html" },
