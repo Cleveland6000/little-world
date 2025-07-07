@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 rem --- ここから設定 ---
 set "input_directory=html"
-set "output_filepath=html.json"
+set "output_filepath=pages.json"
 rem --- ここまで設定 ---
 
 echo.
