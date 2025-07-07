@@ -1,3 +1,0 @@
-
-                <dt>Author of this Passage</dt>
-                <dd>Gamushiro</dd>
