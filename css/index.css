@@ -53,8 +53,10 @@ body {
 
 .sidebar a {
     cursor: pointer;
-    margin: -10px 0; /* liのpaddingと同じ分だけネガティブマージンを設定し、aタグを外側に拡張 */
-    padding: 10px 0; /* aタグの内側に元のpaddingを適用して、テキスト位置を維持 */
+    margin: -10px 0;
+    /* liのpaddingと同じ分だけネガティブマージンを設定し、aタグを外側に拡張 */
+    padding: 10px 0;
+    /* aタグの内側に元のpaddingを適用して、テキスト位置を維持 */
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
@@ -72,10 +74,14 @@ body {
 
 /* 現在のページを示すテキストのスタイル */
 .sidebar ul li span {
-    background-color: #ffffff; /* ハイライトの背景色 */
-    margin: -10px 0; /* liのpaddingと同じ分だけネガティブマージンを設定し、aタグを外側に拡張 */
-    padding: 10px 0; /* aタグの内側に元のpaddingを適用して、テキスト位置を維持 */
-    display: block;            /* ブロック要素にして、liの領域を埋める */
+    background-color: #ffffff;
+    /* ハイライトの背景色 */
+    margin: -10px 0;
+    /* liのpaddingと同じ分だけネガティブマージンを設定し、aタグを外側に拡張 */
+    padding: 10px 0;
+    /* aタグの内側に元のpaddingを適用して、テキスト位置を維持 */
+    display: block;
+    /* ブロック要素にして、liの領域を埋める */
 }
 
 
@@ -83,7 +89,11 @@ body {
 
 .main-content img {
     max-width: 50%;
-    height: auto;
+}
+
+
+.main-content .artwork {
+    max-width: 30%;
 }
 
 .main-content {
