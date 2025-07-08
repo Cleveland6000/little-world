@@ -53,12 +53,6 @@ button {
     /* 標準 */
 }
 
-#scramble-list li {
-    font-size: 1.8em;
-    font-weight: bold;
-    margin-bottom: 5px;
-    word-wrap: break-word;
-}
 
 .sidebar li {
     padding: 10px 0;
