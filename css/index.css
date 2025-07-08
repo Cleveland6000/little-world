@@ -42,7 +42,8 @@ body {
     /* 標準 */
 }
 
-button {
+button,
+label {
     -webkit-user-select: none;
     /* Safari */
     -moz-user-select: none;
