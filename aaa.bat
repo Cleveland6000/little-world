@@ -2,8 +2,8 @@
 setlocal enabledelayedexpansion
 
 rem --- ここから設定 ---
-set "input_directory=%~dp0" 
-set "output_filepath=json\pages.json"
+set "input_directory=html"
+set "output_filepath=pages.json"
 rem --- ここまで設定 ---
 
 echo.
