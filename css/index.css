@@ -85,7 +85,10 @@ body {
 }
 
 
-
+.red-text {
+    color: rgb(255, 0, 0);
+    /* 赤色のRGB値 */
+}
 
 .main-content img {
     max-width: 30%;
