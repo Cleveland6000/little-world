@@ -22,16 +22,6 @@ function generateNavigation() {
         const li = document.createElement('li');
         let linkName = page.url.replace('.html', '');
 
-        // 大文字・小文字の変換とハイフンの処理を自動化
-        linkName = linkName.split('-')
-                           .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                           .join(' ');
-        
-        // "Index" を "Home" にする
-        if (linkName === "Index") {
-            linkName = "Home";
-        }
-
         if (page.url === currentPageFileName) {
           const span = document.createElement('span');
           span.textContent = linkName;
