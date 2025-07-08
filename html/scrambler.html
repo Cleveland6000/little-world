@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-32GT3F8P17"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-32GT3F8P17');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Introduction</title>
+    <link rel="icon" href="../images/icon.png">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <nav class="sidebar" id="main-nav">
+        <script src="../js/a.js"></script>
+    </nav>
+    <div class="main-content">
+
+        <h1>ルービックキューブ スクランブルジェネレーター</h1>
+        <p>「新しいスクランブル」ボタンを押して、ルービックキューブを混ぜる手順を生成します。</p>
+        <div id="scramble-display">ここにスクランブルが表示されます</div>
+        <button id="generate-button" type="button">新しいスクランブル</button>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const scrambleDisplay = document.getElementById('scramble-display');
+                const generateButton = document.getElementById('generate-button');
+
+                // ルービックキューブの基本的な面を表す回転記号
+                const moves = ["U", "D", "R", "L", "F", "B"];
+                // 各面の修飾子（時計回り、反時計回り、180度）
+                const modifiers = ["", "'", "2"];
+
+                // スクラブルを生成する関数
+                function generateScramble(length = 20) { // デフォルトで20手のスクランブルを生成
+                    let scramble = [];
+                    let lastMoveFace = ''; // 直前のムーブの面を記録（U, D, Rなど）
+                    let lastTwoMoveFaces = ['', '']; // 直前2つのムーブの面を記録 (例: ['U', 'D'])
+
+                    for (let i = 0; i < length; i++) {
+                        let move;
+                        let moveFace;
+
+                        do {
+                            // ランダムな面を選択
+                            moveFace = moves[Math.floor(Math.random() * moves.length)];
+                            // ランダムな修飾子を選択
+                            const modifier = modifiers[Math.floor(Math.random() * modifiers.length)];
+                            move = moveFace + modifier;
+
+                            // 同じ面が連続するのを避ける
+                            // 例: U U' は U2 と同じなので避ける
+                            // 例: R R は R2 と同じなので避ける
+                            // 例: U U も避ける
+                        } while (moveFace === lastMoveFace ||
+                            (moveFace === lastTwoMoveFaces[1] && lastMoveFace === lastTwoMoveFaces[0] &&
+                                (
+                                    (moveFace === 'U' && lastMoveFace === 'D') || (moveFace === 'D' && lastMoveFace === 'U') ||
+                                    (moveFace === 'R' && lastMoveFace === 'L') || (moveFace === 'L' && lastMoveFace === 'R') ||
+                                    (moveFace === 'F' && lastMoveFace === 'B') || (moveFace === 'B' && lastMoveFace === 'F')
+                                )
+                            )
+                        );
+                        // 隣接する面の反対側（例: UとD）が交互に3回連続するのを避ける
+                        // 例: U D U は避けたい
+                        // このロジックは少し複雑になりますが、簡単な実装で回避できる場合もあります
+                        // 今回は簡単な連続回避のみで、厳密なルールは簡易化します。
+                        // 厳密なルール（UCI基準など）はさらに複雑なアルゴリズムが必要です。
+                        // 現状のdo-whileループは同じ面の連続（U Uなど）と、U U'D'などの連続をある程度避けます。
+
+                        scramble.push(move);
+                        lastTwoMoveFaces[0] = lastTwoMoveFaces[1]; // 2つ前のムーブを更新
+                        lastTwoMoveFaces[1] = lastMoveFace;       // 1つ前のムーブを更新
+                        lastMoveFace = moveFace;                   // 最新のムーブ面を更新
+                    }
+                    return scramble.join(" ");
+                }
+
+                // ボタンクリックでスクランブルを生成し表示
+                generateButton.addEventListener('click', () => {
+                    scrambleDisplay.textContent = generateScramble(20); // 20手で生成
+                });
+
+                // ページロード時に初回スクランブルを生成
+                scrambleDisplay.textContent = generateScramble(20);
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>
