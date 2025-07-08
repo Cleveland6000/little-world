@@ -75,95 +75,113 @@
         <ul id="scramble-list">
         </ul>
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const scrambleList = document.getElementById('scramble-list');
-                const generateButton = document.getElementById('generate-button');
-                const toggleColorCheckbox = document.getElementById('toggle-color'); // チェックボックスの要素を取得
+    document.addEventListener('DOMContentLoaded', () => {
+        const scrambleList = document.getElementById('scramble-list');
+        const generateButton = document.getElementById('generate-button');
+        const toggleColorCheckbox = document.getElementById('toggle-color'); // チェックボックスの要素を取得
 
-                const moves = ["U", "D", "R", "L", "F", "B"];
-                const modifiers = ["", "'", "2"];
+        const moves = ["U", "D", "R", "L", "F", "B"];
+        const modifiers = ["", "'", "2"];
 
-                const moveColors = {
-                    "U": "move-U",
-                    "D": "move-D",
-                    "R": "move-R",
-                    "L": "move-L",
-                    "F": "move-F",
-                    "B": "move-B"
-                };
+        const moveColors = {
+            "U": "move-U",
+            "D": "move-D",
+            "R": "move-R",
+            "L": "move-L",
+            "F": "move-F",
+            "B": "move-B"
+        };
 
-                function generateScramble(length = 20) {
-                    let scramble = [];
-                    let lastMoveFace = '';
-                    let lastTwoMoveFaces = ['', ''];
+        function generateScramble(length = 20) {
+            let scramble = [];
+            let lastMoveFace = '';
+            let lastTwoMoveFaces = ['', ''];
 
-                    for (let i = 0; i < length; i++) {
-                        let move;
-                        let moveFace;
+            for (let i = 0; i < length; i++) {
+                let move;
+                let moveFace;
 
-                        do {
-                            moveFace = moves[Math.floor(Math.random() * moves.length)];
-                            const modifier = modifiers[Math.floor(Math.random() * modifiers.length)];
-                            move = moveFace + modifier;
+                do {
+                    moveFace = moves[Math.floor(Math.random() * moves.length)];
+                    const modifier = modifiers[Math.floor(Math.random() * modifiers.length)];
+                    move = moveFace + modifier;
 
-                        } while (moveFace === lastMoveFace ||
-                            (moveFace === lastTwoMoveFaces[1] && lastMoveFace === lastTwoMoveFaces[0] &&
-                                (
-                                    (moveFace === 'U' && lastMoveFace === 'D') || (moveFace === 'D' && lastMoveFace === 'U') ||
-                                    (moveFace === 'R' && lastMoveFace === 'L') || (moveFace === 'L' && lastMoveFace === 'R') ||
-                                    (moveFace === 'F' && lastMoveFace === 'B') || (moveFace === 'B' && lastMoveFace === 'F')
-                                )
-                            )
-                        );
+                } while (moveFace === lastMoveFace ||
+                    (moveFace === lastTwoMoveFaces[1] && lastMoveFace === lastTwoMoveFaces[0] &&
+                        (
+                            (moveFace === 'U' && lastMoveFace === 'D') || (moveFace === 'D' && lastMoveFace === 'U') ||
+                            (moveFace === 'R' && lastMoveFace === 'L') || (moveFace === 'L' && lastMoveFace === 'R') ||
+                            (moveFace === 'F' && lastMoveFace === 'B') || (moveFace === 'B' && lastMoveFace === 'F')
+                        )
+                    )
+                );
 
-                        scramble.push(move);
-                        lastTwoMoveFaces[0] = lastTwoMoveFaces[1];
-                        lastTwoMoveFaces[1] = lastMoveFace;
-                        lastMoveFace = moveFace;
+                scramble.push(move);
+                lastTwoMoveFaces[0] = lastTwoMoveFaces[1];
+                lastTwoMoveFaces[1] = lastMoveFace;
+                lastMoveFace = moveFace;
+            }
+            return scramble.join(" ");
+        }
+
+        function generateAndDisplayMultipleScrambles(count = 4) {
+            scrambleList.innerHTML = '';
+            const isColorEnabled = toggleColorCheckbox.checked; // チェックボックスの状態を取得
+
+            for (let i = 0; i < count; i++) {
+                const newScramble = generateScramble(20);
+                const listItem = document.createElement('li');
+
+                const movesArray = newScramble.split(' ');
+                movesArray.forEach(move => {
+                    const moveFace = move.charAt(0);
+                    const span = document.createElement('span');
+                    span.textContent = move + ' '; // ムーブとスペース
+
+                    // チェックボックスがオンの場合にのみ色付けクラスを追加
+                    if (isColorEnabled && moveColors[moveFace]) {
+                        span.classList.add('colored-move'); // 共通のパディングとボーダー半径
+                        span.classList.add(moveColors[moveFace]); // 各面の色
                     }
-                    return scramble.join(" ");
-                }
+                    listItem.appendChild(span);
+                });
 
-                function generateAndDisplayMultipleScrambles(count = 4) {
-                    scrambleList.innerHTML = '';
-                    const isColorEnabled = toggleColorCheckbox.checked; // チェックボックスの状態を取得
+                scrambleList.appendChild(listItem);
+            }
+        }
 
-                    for (let i = 0; i < count; i++) {
-                        const newScramble = generateScramble(20);
-                        const listItem = document.createElement('li');
+        // ボタンクリックでスクランブルを生成し表示
+        generateButton.addEventListener('click', () => {
+            generateAndDisplayMultipleScrambles(4);
+        });
 
-                        const movesArray = newScramble.split(' ');
-                        movesArray.forEach(move => {
-                            const moveFace = move.charAt(0);
-                            const span = document.createElement('span');
-                            span.textContent = move + ' '; // ムーブとスペース
+        // チェックボックスの状態が変更されたときにスクランブルの表示を更新（再生成はしない）
+        toggleColorCheckbox.addEventListener('change', () => {
+            // 現在表示されているスクランブルに対して色付けを適用/解除する
+            const listItems = scrambleList.children;
+            const isColorEnabled = toggleColorCheckbox.checked;
 
-                            // チェックボックスがオンの場合にのみ色付けクラスを追加
-                            if (isColorEnabled && moveColors[moveFace]) {
-                                span.classList.add('colored-move'); // 共通のパディングとボーダー半径
-                                span.classList.add(moveColors[moveFace]); // 各面の色
-                            }
-                            listItem.appendChild(span);
+            Array.from(listItems).forEach(listItem => {
+                Array.from(listItem.children).forEach(span => {
+                    const moveFace = span.textContent.charAt(0); // ムーブの最初の文字を取得
+                    if (isColorEnabled && moveColors[moveFace]) {
+                        span.classList.add('colored-move');
+                        span.classList.add(moveColors[moveFace]);
+                    } else {
+                        span.classList.remove('colored-move');
+                        // 既存の色クラスをすべて削除
+                        Object.values(moveColors).forEach(className => {
+                            span.classList.remove(className);
                         });
-
-                        scrambleList.appendChild(listItem);
                     }
-                }
-
-                // ボタンクリックでスクランブルを生成し表示
-                generateButton.addEventListener('click', () => {
-                    generateAndDisplayMultipleScrambles(4);
                 });
-
-                // チェックボックスの状態が変更されたときにスクランブルを再生成して表示
-                toggleColorCheckbox.addEventListener('change', () => {
-                    generateAndDisplayMultipleScrambles(4);
-                });
-
-                // ページロード時に初回スクランブルを生成 (デフォルトで色付き)
-                generateAndDisplayMultipleScrambles(4);
             });
-        </script>
+        });
+
+        // ページロード時に初回スクランブルを生成 (デフォルトで色付き)
+        generateAndDisplayMultipleScrambles(4);
+    });
+</script>
     </div>
 
 </body>
