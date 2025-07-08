@@ -6,7 +6,7 @@ function generateNavigation() {
   }
 
   // JSONファイルを非同期で読み込む
-  fetch('../html/pages.json') // pages.jsonのパスを指定
+  fetch('../json/pages.json') // pages.jsonのパスを指定
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
