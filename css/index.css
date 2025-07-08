@@ -54,11 +54,9 @@ button {
 }
 
 #scramble-list li {
-    /* li要素のスタイル */
     font-size: 1.8em;
-    /* 文字の大きさを調整 */
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     word-wrap: break-word;
 }
 
