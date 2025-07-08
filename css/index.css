@@ -53,11 +53,13 @@ button {
     /* 標準 */
 }
 
-#scramble-display {
-    font-size: 1.8em; /* この値を大きく変更します */
+#scramble-list li {
+    /* li要素のスタイル */
+    font-size: 1.8em;
+    /* 文字の大きさを調整 */
     font-weight: bold;
-    margin-bottom: 30px;
-    min-height: 1.5em;
+    margin-bottom: 10px;
+    word-wrap: break-word;
 }
 
 .sidebar li {

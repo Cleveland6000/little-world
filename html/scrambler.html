@@ -25,11 +25,12 @@
         <h1>Scrambler</h1>
         <p class="red-text">This is a simplified tool created for personal interest and is not recommended for formal or
             official use</p>
-        <div id="scramble-display">ここにスクランブルが表示されます</div>
+        <ul id="scramble-list">
+        </ul>
         <button id="generate-button" type="button">新しいスクランブル</button>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                const scrambleDisplay = document.getElementById('scramble-display');
+                const scrambleList = document.getElementById('scramble-list'); // idをscramble-listに変更
                 const generateButton = document.getElementById('generate-button');
 
                 // ルービックキューブの基本的な面を表す回転記号
@@ -82,13 +83,24 @@
                     return scramble.join(" ");
                 }
 
+                // 複数のスクランブルを生成し表示する関数
+                function generateAndDisplayMultipleScrambles(count = 4) {
+                    scrambleList.innerHTML = ''; // 既存のスクランブルをクリア
+                    for (let i = 0; i < count; i++) {
+                        const newScramble = generateScramble(20);
+                        const listItem = document.createElement('li');
+                        listItem.textContent = newScramble;
+                        scrambleList.appendChild(listItem);
+                    }
+                }
+
                 // ボタンクリックでスクランブルを生成し表示
                 generateButton.addEventListener('click', () => {
-                    scrambleDisplay.textContent = generateScramble(20); // 20手で生成
+                    generateAndDisplayMultipleScrambles(4); // 4つのスクランブルを生成
                 });
 
                 // ページロード時に初回スクランブルを生成
-                scrambleDisplay.textContent = generateScramble(20);
+                generateAndDisplayMultipleScrambles(4); // 4つのスクランブルを生成
             });
         </script>
     </div>
