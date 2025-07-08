@@ -98,6 +98,8 @@ label {
 }
 
 
+
+
 .red-text {
     color: rgb(255, 0, 0);
     /* 赤色のRGB値 */
@@ -110,6 +112,11 @@ label {
 
 .main-content .artwork {
     max-width: 30%;
+}
+
+
+.image-list-item {
+  list-style-type: none; /* リストマーカーを非表示にする */
 }
 
 .main-content {
