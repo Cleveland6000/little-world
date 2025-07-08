@@ -52,6 +52,7 @@ label {
     /* IE 10+ */
     user-select: none;
     /* 標準 */
+    cursor: pointer;
 }
 
 
