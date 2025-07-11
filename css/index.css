@@ -153,7 +153,6 @@ table {
     /* Adjust table width */
     border-collapse: collapse;
     /* Collapse cell borders */
-    margin: 20px auto;
     /* Top/bottom margin and center alignment */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     /* Light shadow */
