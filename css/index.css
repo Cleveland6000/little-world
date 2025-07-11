@@ -116,7 +116,8 @@ label {
 
 
 .image-list-item {
-  list-style-type: none; /* リストマーカーを非表示にする */
+    list-style-type: none;
+    /* リストマーカーを非表示にする */
 }
 
 .main-content {
@@ -144,4 +145,43 @@ dt {
     font-weight: bold;
     margin-top: 1.0em;
     color: #2c3e50;
+}
+
+
+table {
+    width: 80%;
+    /* Adjust table width */
+    border-collapse: collapse;
+    /* Collapse cell borders */
+    margin: 20px auto;
+    /* Top/bottom margin and center alignment */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Light shadow */
+    background-color: #fff;
+
+    
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    /* Border */
+    padding: 12px 15px;
+    /* Cell padding */
+    text-align: center;
+    /* Center text alignment */
+}
+
+th {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    /* Alternate row background color */
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    /* Hover background color */
+    background-color: #f1f1f1;
 }
