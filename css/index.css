@@ -150,6 +150,7 @@ dt {
 
 table {
     width: 80%;
+    margin-top: 1.5em;
     /* Adjust table width */
     border-collapse: collapse;
     /* Collapse cell borders */
@@ -167,7 +168,6 @@ td {
     /* Border */
     padding: 12px 15px;
     /* Cell padding */
-    text-align: center;
     /* Center text alignment */
 }
 
