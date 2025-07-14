@@ -33,8 +33,13 @@ try:
             # ファイル名から.html拡張子を除去
             base_name = os.path.splitext(filename)[0]
 
-            # ハイフンをスペースに置換し、タイトルケースに変換して表示名を生成
-            display_name = base_name.replace('-', ' ').title()
+            # --- ここから display_name の生成ロジックを変更 ---
+            if base_name == "index": # index.html の場合
+                display_name = "Home"
+            else:
+                # ハイフンをスペースに置換し、タイトルケースに変換して表示名を生成
+                display_name = base_name.replace('-', ' ').title()
+            # --- ここまで display_name の生成ロジックを変更 ---
 
             # --- ここから Font Awesome クラスの割り当てロジックを直接記述 ---
             # Font Awesome の Solid スタイル ('fas') をベースにする
@@ -58,7 +63,7 @@ try:
                 icon_classes = "fas fa-external-link-alt"
             # --- ここまでアイコン割り当てロジック ---
 
-            html_files.append({"url": filename, "display_name": display_name, "icon": icon_classes}) # iconに結合されたクラス文字列を追加
+            html_files.append({"url": filename, "display_name": display_name, "icon": icon_classes})
 except OSError as e:
     print(f"エラー: ディレクトリ '{input_directory}' の内容を読み取れませんでした。")
     print(f"詳細: {e}")
