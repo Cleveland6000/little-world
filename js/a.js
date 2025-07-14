@@ -20,22 +20,31 @@ function generateNavigation() {
 
       pages.forEach(page => {
         const li = document.createElement('li');
-        // ここを page.display_name に変更
         const textToShow = page.display_name;
+        const iconClass = page.icon || "default-icon"; // JSONに'icon'プロパティがない場合のデフォルト
+
+        // アイコン要素を作成
+        const iconElement = document.createElement('i');
+        iconElement.classList.add(iconClass); // iconプロパティの値をクラスとして追加
+        // 必要に応じて他のアイコンライブラリのプレフィックスなどを追加
+        // 例: iconElement.classList.add("fa", iconClass); // Font Awesomeの場合
 
         if (page.url === currentPageFileName) {
           const span = document.createElement('span');
-          span.textContent = textToShow; // display_name を使用
+          span.textContent = textToShow;
+          li.appendChild(iconElement); // アイコンを先に追加
           li.appendChild(span);
         } else {
           const a = document.createElement('a');
           a.href = page.url;
-          a.textContent = textToShow; // display_name を使用
+          a.textContent = textToShow;
+          
+          li.appendChild(iconElement); // アイコンを先に追加
           li.appendChild(a);
         }
-        fragment.appendChild(li); // DocumentFragment に追加
+        fragment.appendChild(li);
       });
-      ul.appendChild(fragment); // 最後に DocumentFragment をまとめて追加
+      ul.appendChild(fragment);
       navElement.appendChild(ul);
     })
     .catch(error => {

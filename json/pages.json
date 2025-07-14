@@ -1,66 +1,82 @@
 [
   {
     "url": "bat-file.html",
-    "display_name": "Bat File"
+    "display_name": "Bat File",
+    "icon": "default-icon"
   },
   {
     "url": "click-bait.html",
-    "display_name": "Click Bait"
+    "display_name": "Click Bait",
+    "icon": "default-icon"
   },
   {
     "url": "custom-language.html",
-    "display_name": "Custom Language"
+    "display_name": "Custom Language",
+    "icon": "default-icon"
   },
   {
     "url": "diary.html",
-    "display_name": "Diary"
+    "display_name": "Diary",
+    "icon": "icon-diary"
   },
   {
     "url": "digital-illustration.html",
-    "display_name": "Digital Illustration"
+    "display_name": "Digital Illustration",
+    "icon": "default-icon"
   },
   {
     "url": "english-grammar-notes.html",
-    "display_name": "English Grammar Notes"
+    "display_name": "English Grammar Notes",
+    "icon": "default-icon"
   },
   {
     "url": "imasime.html",
-    "display_name": "Imasime"
+    "display_name": "Imasime",
+    "icon": "default-icon"
   },
   {
     "url": "index.html",
-    "display_name": "Index"
+    "display_name": "Index",
+    "icon": "icon-home"
   },
   {
     "url": "list-of-certainties.html",
-    "display_name": "List Of Certainties"
+    "display_name": "List Of Certainties",
+    "icon": "default-icon"
   },
   {
     "url": "math.html",
-    "display_name": "Math"
+    "display_name": "Math",
+    "icon": "icon-math"
   },
   {
     "url": "nothing-to-see-here.html",
-    "display_name": "Nothing To See Here"
+    "display_name": "Nothing To See Here",
+    "icon": "default-icon"
   },
   {
     "url": "objectives-list.html",
-    "display_name": "Objectives List"
+    "display_name": "Objectives List",
+    "icon": "default-icon"
   },
   {
     "url": "scramble-generator.html",
-    "display_name": "Scramble Generator"
+    "display_name": "Scramble Generator",
+    "icon": "default-icon"
   },
   {
     "url": "self-introduction.html",
-    "display_name": "Self Introduction"
+    "display_name": "Self Introduction",
+    "icon": "icon-info"
   },
   {
     "url": "something-idk.html",
-    "display_name": "Something Idk"
+    "display_name": "Something Idk",
+    "icon": "default-icon"
   },
   {
     "url": "speedcubing.html",
-    "display_name": "Speedcubing"
+    "display_name": "Speedcubing",
+    "icon": "default-icon"
   }
 ]

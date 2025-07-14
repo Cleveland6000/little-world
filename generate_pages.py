@@ -36,7 +36,21 @@ try:
             # ハイフンをスペースに置換し、タイトルケースに変換して表示名を生成
             display_name = base_name.replace('-', ' ').title()
 
-            html_files.append({"url": filename, "display_name": display_name})
+            # --- ここからアイコン割り当てのロジックを追加 ---
+            # 例: ファイル名によってアイコンを割り当てる
+            icon_class = "default-icon" # デフォルトのアイコンクラス
+            if "index" in base_name:
+                icon_class = "icon-home"
+            elif "diary" in base_name:
+                icon_class = "icon-diary"
+            elif "math" in base_name:
+                icon_class = "icon-math"
+            elif "about-us" in base_name or "self-introduction" in base_name:
+                icon_class = "icon-info"
+            # 必要に応じて他のファイル名パターンとアイコンをマッピング
+            # --- ここまでアイコン割り当てのロジックを追加 ---
+
+            html_files.append({"url": filename, "display_name": display_name, "icon": icon_class}) # iconを追加
 except OSError as e:
     print(f"エラー: ディレクトリ '{input_directory}' の内容を読み取れませんでした。")
     print(f"詳細: {e}")
@@ -52,4 +66,3 @@ except IOError as e:
     exit(1)
 
 print(f"\nHTMLファイルリストを '{output_filepath}' に生成しました。\n")
-# input("Enterキーを押して終了...")
