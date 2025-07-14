@@ -133,6 +133,8 @@ tr:hover {
 
 
 
+
+
 .sidebar {
     width: 200px;
     background-color: #f5f5f5;
@@ -150,23 +152,137 @@ tr:hover {
     -ms-user-select: none;
     user-select: none;
 }
-
+/* ulとliのリセット */
 .sidebar ul {
     padding: 0;
     margin: 0;
+    list-style: none; /* リストの点を削除 */
 }
 
 .sidebar li {
-    padding: 10px 0;
+    /* li 自体にはパディングを設定せず、内部のa/spanがパディングを持つ */
+    padding: 0; 
 }
 
-.sidebar li:hover {
-    background-color: #ffffff;
+/* JavaScriptで追加したクラスに対するスタイル */
+/* `w-full` は `width: 100%;` に対応 */
+.w-full {
+    width: 100%;
 }
 
-.sidebar ul li span {
-    background-color: #ffffff;
-    margin: -10px 0;
-    padding: 10px 0;
-    display: block;
+.h-40 {
+    /* height: 40px; */ /* この行をコメントアウトするか削除します */
+    height: auto;     /* 高さをコンテンツのサイズに合わせて自動調整する */
+    min-height: 40px; /* 項目が空の場合でも最低限の高さを確保したい場合は、この行を残してください */
+                      /* 例: アイコンとテキストが一行の場合の適切な高さ */
+}
+/* `flex` は `display: flex;` */
+.flex {
+    display: flex;
+}
+
+/* `items-center` は `align-items: center;` */
+.items-center {
+    align-items: center;
+}
+
+/* `cursor-pointer` は `cursor: pointer;` */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* `select-none` はユーザー選択を無効化 */
+.select-none {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* `box-border` は `box-sizing: border-box;` */
+.box-border {
+    box-sizing: border-box;
+}
+
+/* `outline-none` は `outline: none;` */
+.outline-none {
+    outline: none;
+}
+
+/* `px-16` は `padding-left: 16px; padding-right: 16px;` */
+.px-16 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* `px-24` は `padding-left: 24px; padding-right: 24px;` (Pixivの例の`a`タグに両方ついていたので、どちらが優先されるか注意) */
+/* 一般的には、より後のルールが優先されるか、詳細度が高い方が優先されます。
+   ここでは単純に上書きする形で記述します。JavaScriptでpx-24を後に設定すればこちらが適用されます。
+   もしpx-16とpx-24が同時に適用される場合は、最も近い定義が優先されます。
+   Tailwind CSSのようなユーティリティファーストのCSSフレームワークを使用していない場合は、
+   これらのクラス名に対するCSSルールを適切に定義する必要があります。
+   ここではpx-24を優先させるとして記述します。
+*/
+.px-24 {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* `gap-8` は `gap: 8px;` (flexコンテナの子要素間の間隔) */
+.gap-8 {
+    gap: 8px;
+}
+
+/* `text-text2` はテキスト色 */
+.text-text2 {
+    color: #333; /* 仮の色。あなたのプロジェクトの色定義に合わせてください */
+}
+
+/* `text-text3` はアイコン色 */
+.text-text3 {
+    color: #666; /* 仮の色。あなたのプロジェクトの色定義に合わせてください */
+}
+
+/* PixivのHTML例にあった`[&>svg]:text-text3`と`[&>pixiv-icon]:text-text3`
+   これはネストされたセレクタで、もしSVGやカスタムアイコンを使用する場合は以下のように書くことができます。
+   ただし、`pixiv-icon`のようなカスタム要素はそのままではCSSでスタイルできない場合があります。
+   もしこれらのアイコンが`<i>`タグで表現されているなら、`.sidebar li i`のようなセレクタで十分です。
+*/
+.sidebar li > svg,
+.sidebar li > pixiv-icon, /* もしカスタム要素であれば */
+.sidebar li > i { /* Font Awesomeなどのアイコンを使用する場合 */
+    color: var(--text3-color, #666); /* カスタムプロパティを使うか、直接色を指定 */
+}
+
+
+/* `hover:bg-surface3` はホバー時の背景色 */
+.hover\:bg-surface3:hover {
+    background-color: #f0f0f0; /* 仮の色。あなたのプロジェクトの色定義に合わせてください */
+}
+
+/* `focus-within:bg-surface3` は内部にフォーカスがある場合の背景色 */
+.focus-within\:bg-surface3:focus-within {
+    background-color: #f0f0f0; /* 仮の色。あなたのプロジェクトの色定義に合わせてください */
+}
+
+/* `bg-surface3` は選択中の背景色 */
+.bg-surface3 {
+    background-color: #e0e0e0; /* 仮の色。あなたのプロジェクトの色定義に合わせてください */
+}
+
+/* `duration-[0.2s]` はトランジションの期間 */
+.duration-\[0\.2s\] {
+    transition-duration: 0.2s;
+}
+
+/* `transition-[background-color]` は背景色のトランジションを指定 */
+.transition-\[background-color\] {
+    transition-property: background-color;
+}
+
+
+/* `aria-disabled:opacity-[0.32]` と `aria-disabled:pointer-events-none` */
+[aria-disabled="true"] {
+    opacity: 0.32;
+    pointer-events: none;
 }
