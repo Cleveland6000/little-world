@@ -5,8 +5,7 @@ function generateNavigation() {
     return;
   }
 
-  // JSONファイルを非同期で読み込む
-  fetch('../json/pages.json') // pages.jsonのパスを指定
+  fetch('../json/pages.json')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -16,30 +15,32 @@ function generateNavigation() {
     .then(pages => {
       const currentPageFileName = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
       const ul = document.createElement('ul');
-      const fragment = document.createDocumentFragment(); // DocumentFragment を使用
+      const fragment = document.createDocumentFragment();
 
       pages.forEach(page => {
         const li = document.createElement('li');
         const textToShow = page.display_name;
-        const iconClass = page.icon || "default-icon"; // JSONに'icon'プロパティがない場合のデフォルト
+        // Pythonで結合されたクラス文字列をそのまま取得
+        const iconClassesString = page.icon; 
 
-        // アイコン要素を作成
         const iconElement = document.createElement('i');
-        iconElement.classList.add(iconClass); // iconプロパティの値をクラスとして追加
-        // 必要に応じて他のアイコンライブラリのプレフィックスなどを追加
-        // 例: iconElement.classList.add("fa", iconClass); // Font Awesomeの場合
+        
+        // --- ここが修正点 ---
+        // スペースで区切られたクラス文字列を配列に分割し、それぞれを追加
+        iconElement.classList.add(...iconClassesString.split(' ')); 
+        // --- 修正ここまで ---
 
         if (page.url === currentPageFileName) {
           const span = document.createElement('span');
           span.textContent = textToShow;
-          li.appendChild(iconElement); // アイコンを先に追加
+          li.appendChild(iconElement);
           li.appendChild(span);
         } else {
           const a = document.createElement('a');
           a.href = page.url;
           a.textContent = textToShow;
           
-          li.appendChild(iconElement); // アイコンを先に追加
+          li.appendChild(iconElement);
           li.appendChild(a);
         }
         fragment.appendChild(li);

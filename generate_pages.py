@@ -36,21 +36,29 @@ try:
             # ハイフンをスペースに置換し、タイトルケースに変換して表示名を生成
             display_name = base_name.replace('-', ' ').title()
 
-            # --- ここからアイコン割り当てのロジックを追加 ---
-            # 例: ファイル名によってアイコンを割り当てる
-            icon_class = "default-icon" # デフォルトのアイコンクラス
-            if "index" in base_name:
-                icon_class = "icon-home"
-            elif "diary" in base_name:
-                icon_class = "icon-diary"
-            elif "math" in base_name:
-                icon_class = "icon-math"
-            elif "about-us" in base_name or "self-introduction" in base_name:
-                icon_class = "icon-info"
-            # 必要に応じて他のファイル名パターンとアイコンをマッピング
-            # --- ここまでアイコン割り当てのロジックを追加 ---
+            # --- ここから Font Awesome クラスの割り当てロジックを直接記述 ---
+            # Font Awesome の Solid スタイル ('fas') をベースにする
+            # 実際のアイコンクラス (fa-homeなど) と結合して文字列として保存
+            
+            icon_classes = "fas fa-file" # デフォルトのFont Awesomeアイコン (ファイルアイコン)
 
-            html_files.append({"url": filename, "display_name": display_name, "icon": icon_class}) # iconを追加
+            if "index" in base_name:
+                icon_classes = "fas fa-home" # ホームアイコン
+            elif "diary" in base_name:
+                icon_classes = "fas fa-book" # 本のアイコン
+            elif "math" in base_name:
+                icon_classes = "fas fa-calculator" # 計算機アイコン
+            elif "self-introduction" in base_name: # self-introduction に対応
+                icon_classes = "fas fa-user" # ユーザーアイコン
+            # 必要に応じて他のファイル名パターンとFont Awesomeアイコンをマッピング
+            # 例えば、bat-file.html -> fa-terminal, click-bait.html -> fa-external-link-alt など
+            elif "bat-file" in base_name:
+                icon_classes = "fas fa-terminal"
+            elif "click-bait" in base_name:
+                icon_classes = "fas fa-external-link-alt"
+            # --- ここまでアイコン割り当てロジック ---
+
+            html_files.append({"url": filename, "display_name": display_name, "icon": icon_classes}) # iconに結合されたクラス文字列を追加
 except OSError as e:
     print(f"エラー: ディレクトリ '{input_directory}' の内容を読み取れませんでした。")
     print(f"詳細: {e}")
@@ -66,3 +74,4 @@ except IOError as e:
     exit(1)
 
 print(f"\nHTMLファイルリストを '{output_filepath}' に生成しました。\n")
+# input("Enterキーを押して終了...")

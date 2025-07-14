@@ -2,81 +2,81 @@
   {
     "url": "bat-file.html",
     "display_name": "Bat File",
-    "icon": "default-icon"
+    "icon": "fas fa-terminal"
   },
   {
     "url": "click-bait.html",
     "display_name": "Click Bait",
-    "icon": "default-icon"
+    "icon": "fas fa-external-link-alt"
   },
   {
     "url": "custom-language.html",
     "display_name": "Custom Language",
-    "icon": "default-icon"
+    "icon": "fas fa-file"
   },
   {
     "url": "diary.html",
     "display_name": "Diary",
-    "icon": "icon-diary"
+    "icon": "fas fa-book"
   },
   {
     "url": "digital-illustration.html",
     "display_name": "Digital Illustration",
-    "icon": "default-icon"
+    "icon": "fas fa-file"
   },
   {
     "url": "english-grammar-notes.html",
     "display_name": "English Grammar Notes",
-    "icon": "default-icon"
+    "icon": "fas fa-file"
   },
   {
     "url": "imasime.html",
     "display_name": "Imasime",
-    "icon": "default-icon"
+    "icon": "fas fa-file"
   },
   {
     "url": "index.html",
     "display_name": "Index",
-    "icon": "icon-home"
+    "icon": "fas fa-home"
   },
   {
     "url": "list-of-certainties.html",
     "display_name": "List Of Certainties",
-    "icon": "default-icon"
+    "icon": "fas fa-file"
   },
   {
     "url": "math.html",
     "display_name": "Math",
-    "icon": "icon-math"
+    "icon": "fas fa-calculator"
   },
   {
     "url": "nothing-to-see-here.html",
     "display_name": "Nothing To See Here",
-    "icon": "default-icon"
+    "icon": "fas fa-file"
   },
   {
     "url": "objectives-list.html",
     "display_name": "Objectives List",
-    "icon": "default-icon"
+    "icon": "fas fa-file"
   },
   {
     "url": "scramble-generator.html",
     "display_name": "Scramble Generator",
-    "icon": "default-icon"
+    "icon": "fas fa-file"
   },
   {
     "url": "self-introduction.html",
     "display_name": "Self Introduction",
-    "icon": "icon-info"
+    "icon": "fas fa-user"
   },
   {
     "url": "something-idk.html",
     "display_name": "Something Idk",
-    "icon": "default-icon"
+    "icon": "fas fa-file"
   },
   {
     "url": "speedcubing.html",
     "display_name": "Speedcubing",
-    "icon": "default-icon"
+    "icon": "fas fa-file"
   }
 ]
