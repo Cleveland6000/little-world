@@ -132,8 +132,6 @@ tr:hover {
 
 
 
-
-
 .sidebar {
     width: 200px;
     background-color: #f5f5f5;
@@ -144,11 +142,9 @@ tr:hover {
     height: 100vh;
     overflow-y: auto;
     flex-shrink: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    user-select: none; /* ベンダープレフィックスは不要 */
 }
+
 /* ulとliのリセット */
 .sidebar ul {
     padding: 0;
@@ -156,128 +152,131 @@ tr:hover {
 }
 
 .sidebar li {
-    /* li 自体にはパディングを設定せず、内部のa/spanがパディングを持つ */
-    padding: 0; 
+    padding: 0;
 }
 
-/* JavaScriptで追加したクラスに対するスタイル */
-/* `w-full` は `width: 100%;` に対応 */
+/* リンクの下線を削除 */
+.sidebar a {
+    text-decoration: none;
+    color: inherit; /* 親要素の色を継承 */
+}
+
+/* JavaScriptで追加されるユーティリティクラス */
 .w-full {
     width: 100%;
 }
 
+/*
+以前のh-40に関するコメントは残しておきます。
+高さの指定方法によって意図が変わるため、どちらか一方を選択してください。
+現在適用されているのは `height: auto;` です。
+*/
 .h-40 {
-    /* height: 40px; */ /* この行をコメントアウトするか削除します */
-    height: auto;     /* 高さをコンテンツのサイズに合わせて自動調整する */
-    min-height: 40px; /* 項目が空の場合でも最低限の高さを確保したい場合は、この行を残してください */
-                      /* 例: アイコンとテキストが一行の場合の適切な高さ */
+    height: auto;           /* 高さをコンテンツのサイズに合わせて自動調整する */
+    min-height: 40px;       /* 項目が空の場合でも最低限の高さを確保したい場合に残す */
 }
-/* `flex` は `display: flex;` */
+
 .flex {
     display: flex;
 }
 
-/* `items-center` は `align-items: center;` */
 .items-center {
     align-items: center;
 }
 
-/* `cursor-pointer` は `cursor: pointer;` */
 .cursor-pointer {
     cursor: pointer;
 }
 
-/* `select-none` はユーザー選択を無効化 */
 .select-none {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    user-select: none; /* ベンダープレフィックスは不要 */
 }
 
-/* `box-border` は `box-sizing: border-box;` */
 .box-border {
     box-sizing: border-box;
 }
 
-/* `outline-none` は `outline: none;` */
 .outline-none {
     outline: none;
 }
 
-/* `px-16` は `padding-left: 16px; padding-right: 16px;` */
+/* パディングクラスはより詳細な方が優先されます。ここではpx-24を優先。 */
 .px-16 {
     padding-left: 16px;
     padding-right: 16px;
 }
 
-/* `px-24` は `padding-left: 24px; padding-right: 24px;` (Pixivの例の`a`タグに両方ついていたので、どちらが優先されるか注意) */
-/* 一般的には、より後のルールが優先されるか、詳細度が高い方が優先されます。
-   ここでは単純に上書きする形で記述します。JavaScriptでpx-24を後に設定すればこちらが適用されます。
-   もしpx-16とpx-24が同時に適用される場合は、最も近い定義が優先されます。
-   Tailwind CSSのようなユーティリティファーストのCSSフレームワークを使用していない場合は、
-   これらのクラス名に対するCSSルールを適切に定義する必要があります。
-   ここではpx-24を優先させるとして記述します。
-*/
 .px-24 {
     padding-left: 24px;
     padding-right: 24px;
 }
 
-/* `gap-8` は `gap: 8px;` (flexコンテナの子要素間の間隔) */
 .gap-8 {
     gap: 8px;
 }
 
-/* `text-text2` はテキスト色 */
+/* テキストとアイコンの色 */
 .text-text2 {
-    color: #333; /* 仮の色。あなたのプロジェクトの色定義に合わせてください */
+    color: #333; /* 仮の色。プロジェクトの色定義に合わせてください */
 }
 
-/* `text-text3` はアイコン色 */
 .text-text3 {
-    color: #666; /* 仮の色。あなたのプロジェクトの色定義に合わせてください */
+    color: #666; /* 仮の色。プロジェクトの色定義に合わせてください */
 }
 
-/* PixivのHTML例にあった`[&>svg]:text-text3`と`[&>pixiv-icon]:text-text3`
-   これはネストされたセレクタで、もしSVGやカスタムアイコンを使用する場合は以下のように書くことができます。
-   ただし、`pixiv-icon`のようなカスタム要素はそのままではCSSでスタイルできない場合があります。
-   もしこれらのアイコンが`<i>`タグで表現されているなら、`.sidebar li i`のようなセレクタで十分です。
-*/
+/* アイコンのスタイルを統一し、サイズを固定する */
 .sidebar li > svg,
-.sidebar li > pixiv-icon, /* もしカスタム要素であれば */
-.sidebar li > i { /* Font Awesomeなどのアイコンを使用する場合 */
-    color: var(--text3-color, #666); /* カスタムプロパティを使うか、直接色を指定 */
+.sidebar li > [data-icon],
+.sidebar li > i {
+    /* アイコンの幅と高さを固定する */
+    width: 20px;   /* 例: 20pxに固定 */
+    height: 20px;  /* 例: 20pxに固定 */
+
+    /* アイコンフォントの場合、font-sizeも設定することで内部の描画サイズを制御 */
+    font-size: 20px;
+
+    /* フレックスコンテナ内でアイコンが縮まないようにする */
+    flex-shrink: 0;
+
+    /* 必要に応じて、アイコンの垂直方向の位置を微調整（以前の提案） */
+    position: relative;
+    top: 2px; /* この値は実際のアイコンとテキストに合わせて調整してください */
+
+    /* その他のスタイル */
+    color: var(--text3-color, #666);
 }
 
+.sidebar li > a, /* aタグを直接の子に持つliの場合 */
+.sidebar li > span, /* spanタグを直接の子に持つliの場合 */
+.sidebar li > div { /* divタグを直接の子に持つliの場合など */
+    padding-top: 8px;   /* 上パディング */
+    padding-bottom: 8px; /* 下パディング */
+    /* 左右のパディングは既存のpx-16やpx-24が適用されます */
+}
 
-/* `hover:bg-surface3` はホバー時の背景色 */
+/* ホバー時、フォーカス時、選択時の背景色 */
 .hover\:bg-surface3:hover {
-    background-color: #f0f0f0; /* 仮の色。あなたのプロジェクトの色定義に合わせてください */
+    background-color: #f0f0f0; /* 仮の色。プロジェクトの色定義に合わせてください */
 }
 
-/* `focus-within:bg-surface3` は内部にフォーカスがある場合の背景色 */
 .focus-within\:bg-surface3:focus-within {
-    background-color: #f0f0f0; /* 仮の色。あなたのプロジェクトの色定義に合わせてください */
+    background-color: #f0f0f0; /* 仮の色。プロジェクトの色定義に合わせてください */
 }
 
-/* `bg-surface3` は選択中の背景色 */
 .bg-surface3 {
-    background-color: #e0e0e0; /* 仮の色。あなたのプロジェクトの色定義に合わせてください */
+    background-color: #e0e0e0; /* 仮の色。プロジェクトの色定義に合わせてください */
 }
 
-/* `duration-[0.2s]` はトランジションの期間 */
+/* トランジション */
 .duration-\[0\.2s\] {
     transition-duration: 0.2s;
 }
 
-/* `transition-[background-color]` は背景色のトランジションを指定 */
 .transition-\[background-color\] {
     transition-property: background-color;
 }
 
-
-/* `aria-disabled:opacity-[0.32]` と `aria-disabled:pointer-events-none` */
+/* 無効化された要素のスタイル */
 [aria-disabled="true"] {
     opacity: 0.32;
     pointer-events: none;
