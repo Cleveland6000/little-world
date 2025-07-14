@@ -6,7 +6,7 @@ function generateNavigation() {
   }
 
   // JSONファイルを非同期で読み込む
-  fetch('../html/pages.json') // pages.jsonのパスを指定
+  fetch('../json/pages.json') // pages.jsonのパスを指定
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -20,16 +20,17 @@ function generateNavigation() {
 
       pages.forEach(page => {
         const li = document.createElement('li');
-        let linkName = page.url.replace('.html', '');
+        // ここを page.display_name に変更
+        const textToShow = page.display_name;
 
         if (page.url === currentPageFileName) {
           const span = document.createElement('span');
-          span.textContent = linkName;
+          span.textContent = textToShow; // display_name を使用
           li.appendChild(span);
         } else {
           const a = document.createElement('a');
           a.href = page.url;
-          a.textContent = linkName;
+          a.textContent = textToShow; // display_name を使用
           li.appendChild(a);
         }
         fragment.appendChild(li); // DocumentFragment に追加
