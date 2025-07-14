@@ -118,15 +118,20 @@ tr:hover {
 
 
 #main-nav ul li i {
-    color: #666; /* アイコンの色（お好みで調整） */
-    text-align: center; /* アイコンを中央揃えにする（min-widthと組み合わせると良い） */
+    color: #666;
+    /* アイコンの色（お好みで調整） */
+    text-align: center;
+    /* アイコンを中央揃えにする（min-widthと組み合わせると良い） */
 }
 
 /* main-nav の ul 要素内の li 要素に適用 */
 #main-nav ul li {
-    display: flex; /* 子要素（アイコンとリンク）をFlexboxで横並びにする */
-    align-items: center; /* 垂直方向の中央揃え */
-    gap: 8px; /* アイコンとテキストの間隔（お好みで調整） */
+    display: flex;
+    /* 子要素（アイコンとリンク）をFlexboxで横並びにする */
+    align-items: center;
+    /* 垂直方向の中央揃え */
+    gap: 8px;
+    /* アイコンとテキストの間隔（お好みで調整） */
 }
 
 
@@ -219,40 +224,22 @@ tr:hover {
 
 /* ★★★ アイコンのスタイル調整ここから ★★★ */
 /* 全てのアイコン要素と、アイコンフォントの擬似要素に適用 */
-.sidebar li > svg,
-.sidebar li > [data-icon],
-.sidebar li > i,
-.sidebar li > i::before { /* iタグの::before擬似要素を追加 */
-    /* アイコンの幅と高さを固定する（必須） */
+
+/* ★★★ アイコンのスタイル調整ここまで ★★★ */
+.sidebar li i,
+.sidebar li svg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 20px;
     height: 20px;
-
-    /* アイコンフォントの場合、font-sizeも設定することで内部の描画サイズを制御（重要） */
-    font-size: 20px;
-
-    /* フレックスコンテナ内でアイコンが縮まないようにする */
+    vertical-align: middle;
     flex-shrink: 0;
-
-    /* アイコンフォントのdisplayプロパティを調整し、width/heightが効くようにする */
-    /* inline-flexにすることで、内部での中央揃えも可能になる */
-    display: inline-flex;
-    justify-content: center; /* アイコンのコンテンツを水平中央に */
-    align-items: center;     /* アイコンのコンテンツを垂直中央に */
-
-    /* 垂直方向の微調整（最も重要な調整ポイント） */
-    /* スクリーンショットのずれから判断すると、2pxから3pxくらいが適切かもしれません。
-       ブラウザの開発者ツールで値を試しながら調整してください。 */
-    position: relative;
-    top: 2px; /* ← この値を最終的に完璧な位置になるよう調整してください */
-
-    /* その他のスタイル */
-    color: var(--text3-color, #666);
 }
-/* ★★★ アイコンのスタイル調整ここまで ★★★ */
 
-.sidebar li > a,
-.sidebar li > span,
-.sidebar li > div {
+.sidebar li>a,
+.sidebar li>span,
+.sidebar li>div {
     padding-top: 8px;
     padding-bottom: 8px;
 }
