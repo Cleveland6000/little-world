@@ -60,6 +60,11 @@
     "icon": "fas fa-file"
   },
   {
+    "url": "product-review.html",
+    "display_name": "Product Review",
+    "icon": "fas fa-file"
+  },
+  {
     "url": "scramble-generator.html",
     "display_name": "Scramble Generator",
     "icon": "fas fa-file"
