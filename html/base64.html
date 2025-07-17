@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム文字列のBase変換</title>
+</head>
+<body>
+    <button id="generate-button" type="button">Regenerate</button>
+    <p>生成されたランダム文字列 (数値化前): <span id="random-string-output"></span></p>
+    <p>変換結果: <span id="output-result"></span></p>
+
+    <script>
+        const custom_alphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
+
+        /**
+         * 数値を指定されたカスタムアルファベットの文字列にエンコードします。
+         * @param {number} num エンコードする数値。
+         * @param {string} alphabet 使用するアルファベット文字列。
+         * @returns {string} エンコードされた文字列。
+         */
+        function encodeToBase(num, alphabet) {
+            if (num === 0) {
+                return alphabet[0];
+            }
+
+            let encodedString = "";
+            const base = alphabet.length;
+
+            while (num > 0) {
+                encodedString = alphabet[num % base] + encodedString;
+                num = Math.floor(num / base);
+            }
+
+            return encodedString;
+        }
+
+        /**
+         * 指定された長さのランダムな文字列を生成します。
+         * @param {number} length 生成する文字列の長さ。
+         * @returns {string} ランダムな文字列。
+         */
+        function generateRandomString(length) {
+            let result = '';
+            // ランダムな文字列に含める文字セット
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            const charactersLength = characters.length;
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+
+        /**
+         * 文字列を数値に変換します（シンプルなハッシュ化のようなもの）。
+         * @param {string} str 数値に変換する文字列。
+         * @returns {number} 変換された数値。
+         */
+        function stringToNumber(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                // 文字のUnicodeコードポイントと既存のハッシュ値を組み合わせて数値を生成
+                hash = (hash * 31) + str.charCodeAt(i); // 31は一般的に使われる素数
+                hash |= 0; // 32bit整数に変換 (正負のどちらもありうる)
+            }
+            // Math.abs() で絶対値を取り、負の数を避ける
+            return Math.abs(hash);
+        }
+
+        // regenerateボタンが押された時の処理
+        document.getElementById('generate-button').addEventListener('click', () => {
+            const randomStringLength = 10; // 生成するランダム文字列の長さ
+            const randomString = "trance-kick-punchy_130bpm";
+
+            // ランダム文字列を数値に変換
+            const numberToEncode = stringToNumber(randomString);
+
+            // 取得した数値をcustom_alphabetでエンコード
+            const encodedResult = encodeToBase(numberToEncode, custom_alphabet);
+
+            // 結果を表示
+            document.getElementById('random-string-output').textContent = randomString;
+            document.getElementById('output-result').textContent = encodedResult;
+            console.log(`生成されたランダム文字列: ${randomString}`);
+            console.log(`数値化された値: ${numberToEncode}`);
+            console.log(`エンコードされた値: ${encodedResult}`);
+        });
+    </script>
+</body>
+</html>
