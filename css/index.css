@@ -16,13 +16,9 @@ body {
 button,
 label {
     -webkit-user-select: none;
-    /* Safari */
     -moz-user-select: none;
-    /* Firefox */
     -ms-user-select: none;
-    /* IE 10+ */
     user-select: none;
-    /* 標準 */
     cursor: pointer;
 }
 
@@ -276,4 +272,83 @@ tr:hover {
 [aria-disabled="true"] {
     opacity: 0.32;
     pointer-events: none;
+}
+
+
+
+
+
+
+
+/* テーブルのスタイル */
+.enchantment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    
+}
+
+.enchantment-table th,
+.enchantment-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.enchantment-table th {
+    background-color: #e0e0e0;
+    color: #555;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    /* ヘッダーがクリック可能であることを示す */
+    position: relative;
+    /* 矢印の配置用 */
+    padding-right: 30px;
+    /* 矢印のためのスペース */
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.enchantment-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.enchantment-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* ソート方向を示す矢印のスタイル */
+.enchantment-table th.sortable-header::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 4px solid transparent;
+}
+
+.enchantment-table th.sortable-header.asc::after {
+    border-top-color: #333;
+    /* 昇順の矢印 */
+}
+
+.enchantment-table th.sortable-header.desc::after {
+    border-bottom-color: #333;
+    /* 降順の矢印 */
+}
+
+/* アクティブなソートヘッダーの強調 */
+.enchantment-table th.asc,
+.enchantment-table th.desc {
+    background-color: #d1d1d1;
+    /* ソート中のヘッダーの背景色 */
 }

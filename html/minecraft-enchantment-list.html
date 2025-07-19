@@ -26,89 +26,67 @@
     <div class="main-content">
         <h1>Minecraft Enchantment List</h1>
 
-        <ul>
-            <li>Aqua Affinity</li>
-            <li>Bane of Arthropods</li>
-            <li>Blast Protection</li>
-            <li>Channeling</li>
-            <li>Curse of Binding</li>
-            <li>Curse of Vanishing</li>
-            <li>Depth Strider</li>
-            <li>Efficiency</li>
-            <li>Feather Falling</li>
-            <li>Fire Aspect</li>
-            <li>Fire Protection</li>
-            <li>Flame</li>
-            <li>Fortune</li>
-            <li>Frost Walker</li>
-            <li>Impaling</li>
-            <li>Infinity</li>
-            <li>Knockback</li>
-            <li>Looting</li>
-            <li>Loyalty</li>
-            <li>Luck of the Sea</li>
-            <li>Lure</li>
-            <li>Mending</li>
-            <li>Multishot</li>
-            <li>Piercing</li>
-            <li>Power</li>
-            <li>Projectile Protection</li>
-            <li>Punch</li>
-            <li>Quick Charge</li>
-            <li>Respiration</li>
-            <li>Riptide</li>
-            <li>Sharpness</li>
-            <li>Silk Touch</li>
-            <li>Smite</li>
-            <li>Soul Speed</li>
-            <li>Sweeping Edge</li>
-            <li>Thorns</li>
-            <li>Unbreaking</li>
-        </ul>
+<div id="controls">
+        <label for="sort-by">Sort by:</label>
+        <select id="sort-by">
+            <option value="name">Alphabetical (A-Z)</option>
+            <option value="max_level">Max Level (Low to High)</option>
+            <option value="is_treasure">Treasure Enchantment First</option>
+            </select>
+    </div>
+        <div id="enchantment-list"></div>
+
+
 
         <ul>
-            <li>Aqua Affinity</li>
-            <li>Bane of Arthropods</li>
+            <li class="blue-text">Aqua Affinity</li>
+            <li class="blue-text">Bane of Arthropods</li>
             <li>Blast Protection</li>
-            <li>Channeling</li>
-            <li>Curse of Binding</li>
-            <li>Curse of Vanishing</li>
+            <li class="blue-text">Channeling</li>
+            <li class="blue-text">Curse of Binding</li>
+            <li class="blue-text">Curse of Vanishing</li>
             <li>Depth Strider</li>
             <li>Efficiency</li>
             <li>Feather Falling</li>
             <li>Fire Aspect</li>
             <li>Fire Protection</li>
-            <li>Flame</li>
-            <li><p>Fortune</p></li>
-            <li>Frost Walker</li>
+            <li class="blue-text">Flame</li>
+            <li>Fortune</li>
+            <li class="blue-text">Frost Walker</li>
             <li>Impaling</li>
-            <li>Infinity</li>
-            <li>Knockback</li>
+            <li class="blue-text">Infinity</li>
+            <li class="blue-text">Knockback</li>
             <li>Looting</li>
             <li>Loyalty</li>
-            <li>Luck of the Sea</li>
+            <li class="blue-text">Luck of the Sea</li>
             <li>Lure</li>
-            <li>Mending</li>
-            <li>Multishot</li>
+            <li class="blue-text">Mending</li>
+            <li class="blue-text">Multishot</li>
             <li>Piercing</li>
             <li>Power</li>
-            <li>Projectile Protection</li>
+            <li class="blue-text">Projectile Protection</li>
             <li>Punch</li>
             <li>Quick Charge</li>
             <li>Respiration</li>
-            <li>Riptide</li>
+            <li class="blue-text">Riptide</li>
             <li>Sharpness</li>
-            <li>Silk Touch</li>
+            <li class="blue-text">Silk Touch</li>
             <li>Smite</li>
             <li>Soul Speed</li>
             <li>Sweeping Edge</li>
-            <li>Thorns</li>
+            <li class="blue-text">Thorns</li>
             <li>Unbreaking</li>
         </ul>
     </div>
+
+
+    <script src="../js/minecraft-enchantments.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // エンチャントリストの初期化とソート機能の設定
+            initializeEnchantmentList('enchantment-list', '../json/minecraft-enchantments.json', 'sort-by');
+        });
+    </script>
 </body>
 
 </html>
-
-
-
