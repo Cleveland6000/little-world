@@ -37,6 +37,12 @@ label {
     /* 赤色のRGB値 */
 }
 
+
+.blue-text {
+    color: rgb(0, 0, 255);
+    /* 赤色のRGB値 */
+}
+
 .main-content img {
     max-width: 30%;
 }

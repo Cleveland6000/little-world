@@ -1,5 +1,10 @@
 [
   {
+    "url": "base64.html",
+    "display_name": "Base64",
+    "icon": "fas fa-file"
+  },
+  {
     "url": "bat-file.html",
     "display_name": "Bat File",
     "icon": "fas fa-terminal"
@@ -48,6 +53,11 @@
     "url": "math.html",
     "display_name": "Math",
     "icon": "fas fa-calculator"
+  },
+  {
+    "url": "minecraft-enchantment-list.html",
+    "display_name": "Minecraft Enchantment List",
+    "icon": "fas fa-file"
   },
   {
     "url": "nothing-to-see-here.html",
