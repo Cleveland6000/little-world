@@ -1,6 +1,5 @@
 未入手
 
-Blast Protection IV
 Impaling V
 Loyalty III
 Punch II
@@ -8,6 +7,7 @@ Quick Charge III
 
 入手済み(理論値ではない)
 
+--Blast Protection IV
 --Fire Protection IV
 --Lure III
 --Efficiency V
