@@ -23,10 +23,10 @@ Quick Charge III
 --Smite V
 --Piercing IV
 --Protection IV
---Sharpness V
 
 入手済み(理論値)
 
+---Sharpness V
 ---Looting III
 ---Mending
 ---Thorns III
