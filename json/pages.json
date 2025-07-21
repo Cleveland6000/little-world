@@ -1,5 +1,10 @@
 [
   {
+    "url": "achievements.html",
+    "display_name": "Achievements",
+    "icon": "fas fa-file"
+  },
+  {
     "url": "base64.html",
     "display_name": "Base64",
     "icon": "fas fa-file"
