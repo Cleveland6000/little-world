@@ -1,12 +1,7 @@
-未入手
-
 Impaling V
 Loyalty III
 Punch II
 Quick Charge III
-
-入手済み(理論値ではない)
-
 --Blast Protection IV
 --Fire Protection IV
 --Lure III
@@ -17,15 +12,11 @@ Quick Charge III
 --Sweeping Edge III
 --Feather Falling IV
 --Fire Aspect II
-
 --Fortune III
 --Depth Strider III
 --Smite V
 --Piercing IV
 --Protection IV
-
-入手済み(理論値)
-
 ---Sharpness V
 ---Looting III
 ---Mending
