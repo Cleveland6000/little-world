@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="google-site-verification" content="z9imFEyMXcfKQYOxcrEadGX0b9qIK5Dip8sGKwRSr9E">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-32GT3F8P17"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-32GT3F8P17');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blender Sttings</title>
+    <link rel="icon" href="../images/icon.png">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <nav class="sidebar" id="main-nav">
+        <script src="../js/a.js"></script>
+    </nav>
+    <div class="main-content">
+
+        <h1>Blender Sttings</h1>
+        <dl>
+            <dt>
+                Render Engine
+            </dt>
+            <dd>
+                Cycles
+            </dd>
+            <dt>
+                View Transform
+            </dt>
+            <dd>
+                Filmic
+            </dd>
+            <dt>
+                Frame Rate
+            </dt>
+            <dd>
+                24 fps
+            </dd>
+            <dt>
+                Optix
+            </dt>
+            <dd>
+                NVIDIA GeForce RTX 2060 SUPER
+            </dd>
+            <dt>
+                Device
+            </dt>
+            <dd>
+                GPU Compute
+            </dd>
+            <dt>
+                Cavity
+            </dt>
+            <dd>
+                True
+            </dd>
+            <dt>
+                Use Nodes
+            </dt>
+            <dd>
+                True
+            </dd>
+            <dt>
+                LoopTools
+            </dt>
+            <dd>
+                True
+            </dd>
+
+        </dl>
+        <p>「Shift + A」を押して「Search」から「Glare」ノードを追加し、そのノードを「Render Layers」ノードと「Viewer」/「Composite」ノードの間に挿入します</p>
+        <p>Glare Type を Fog Glow にします</p>
+        <p>Viewer ノードを追加して、Glare ノードの出力の Image を、そのViewerのImageの入力とする</p>
+    </div>
+</body>
+
+</html>
