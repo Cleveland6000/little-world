@@ -55,6 +55,11 @@
     "icon": "fas fa-home"
   },
   {
+    "url": "learned-list.html",
+    "display_name": "Learned List",
+    "icon": "fas fa-file"
+  },
+  {
     "url": "list-of-certainties.html",
     "display_name": "List Of Certainties",
     "icon": "fas fa-file"
